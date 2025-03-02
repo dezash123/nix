@@ -1,0 +1,144 @@
+{ inputs, pkgs, ... }: 
+let 
+  # _RStudio = pkgs.rstudioWrapper.override { packages = with pkgs.rPackages; [ 
+  #   tidyverse
+  #   quarto
+  #   rmarkdown
+  #   rsconnect
+  #   packrat
+  # ]; };
+  # _actflow = pkgs.callPackage ../../pkgs/actflow/package.nix {};
+  _irsim = pkgs.callPackage ../../pkgs/irsim/package.nix {};
+in
+{
+  home.packages = with pkgs; [
+    # _actflow
+    # _irsim
+    # _RStudio
+    # _xyce
+
+    apfs-fuse
+    apfsprogs
+    arduino-ide
+    audacity
+    bitwise                           # cli tool for bit / hex manipulation
+    bottom
+    calibre
+    cargo-generate
+    cbonsai                           # terminal screensaver
+    code-cursor
+    chatgpt-cli
+    discord
+    jetbrains.clion
+    conda
+    evince                            # gnome pdf viewer
+    lsd                               # ls replacement
+    entr                              # perform action when file change
+    fastfetch			      # better neofetch
+    fd                                # find replacement
+    firefox
+    file                              # Show file information 
+    fzf                               # fuzzy finder
+    google-chrome
+    gtt                               # google translate TUI
+    gh
+    # ghidra
+    gifsicle                          # gif utility
+    gimp
+    gtkwave
+    gtrash                            # rm replacement, put deleted files in system trash
+    hexdump
+    imagemagick
+    jdk17                             # java
+    jetbrains.pycharm-professional
+    jupyter
+    kicad
+    lazygit
+    libreoffice
+    logseq
+    magic-vlsi
+    nautilus     # file manager
+    neovide
+    # nomachine-client
+    nitch                             # systhem fetch util
+    niv
+    nix-prefetch-github
+    obsidian
+    ocrmypdf
+    onedrivegui
+    openconnect
+    openssl
+    # inputs.nixvim.packages.${system}.default    
+    p7zip
+    pdfmm
+    pdftk
+    perl
+    pipes                             # terminal screensaver
+    pkg-config
+    prismlauncher                     # minecraft launcher
+    
+    qFlipper
+    ripgrep                           # grep replacement
+    rustdesk
+    slack
+    soundwireserver                   # pass audio to android phone
+    stm32cubemx
+    tdf                               # cli pdf viewer
+    teensyduino
+    teensy-udev-rules
+    texliveFull
+    todo                              # cli todo list
+    toipe                             # typing test in the terminal
+    # tightvnc
+    valgrind                          # c memory analyzer
+    vscode
+    vim
+    yazi                              # terminal file manager
+    yt-dlp-light
+    x2goclient
+    zenity
+    winetricks
+    wineWowPackages.wayland
+    wlvncc
+
+    # C / C++
+    gcc
+    gnumake
+
+    rustup
+
+    # Python
+    # python3
+
+    bleachbit                         # cache cleaner
+    cmatrix
+    gparted                           # partition manager
+    ffmpeg
+    imv                               # image viewer
+    killall
+    libnotify
+	  man-pages					            	  # extra man pages
+    mpv                               # video player
+    ncdu                              # disk space
+    openssl
+    pamixer                           # pulseaudio command line mixer
+    pavucontrol                       # pulseaudio volume controle (GUI)
+    playerctl                         # controller for media players
+    wl-clipboard                      # clipboard utils for wayland (wl-copy, wl-paste)
+    cliphist                          # clipboard manager
+    poweralertd
+    qalculate-gtk                     # calculator
+    unzip
+    wget
+    xdg-utils
+    xxd
+    inputs.alejandra.defaultPackage.${system}
+
+    magic-vlsi
+    # xyce
+    yosys
+    
+    # _actflow
+    
+  ];
+}
