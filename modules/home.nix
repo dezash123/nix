@@ -8,7 +8,7 @@
     users.${username} = {
       imports = 
         if (host == "nix-top") then 
-          [ ./../home/nix-top.nix ] 
+          [ ./home/nix-top.nix ] 
         else if (host == "bigserv") then
           [ ./../home/bigserv.nix ]
         else if (host == "bigserv") then

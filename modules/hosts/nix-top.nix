@@ -6,6 +6,7 @@
     ../drivers/client_network.nix
     ../drivers/audio.nix
     ../drivers/flipper_zero.nix
+    ../home.nix
   ];
 
   environment.systemPackages = with pkgs; [

@@ -4,7 +4,6 @@
     ./boot.nix
     ./network.nix
     ./packages.nix
-    ./home.nix
     ./security.nix
     ./services.nix
     ./system.nix
