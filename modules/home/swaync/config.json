@@ -64,11 +64,11 @@
         "actions": [
           {
             "label": "󰹑  Whole screen",
-            "command": "grimblast --notify --cursor --freeze copy output"
+            "command": "grimblast --notify --freeze copy output"
           },
           {
             "label": "󰩭  Window / Region",
-            "command": "grimblast --notify --cursor --freeze copy area"
+            "command": "grimblast --notify --freeze copy area"
           }
         ]
       },

@@ -7,6 +7,7 @@
     ../drivers/audio.nix
     ../drivers/flipper_zero.nix
     ../home.nix
+    ../app/docker.nix
   ];
 
   environment.systemPackages = with pkgs; [

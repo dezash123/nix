@@ -21,6 +21,7 @@ in
     apfsprogs
     arduino-ide
     audacity
+    bambu-studio
     bitwise                           # cli tool for bit / hex manipulation
     bottom
     calibre
@@ -55,7 +56,6 @@ in
     kicad
     lazygit
     libreoffice
-    logseq
     magic-vlsi
     nautilus     # file manager
     neovide
@@ -79,7 +79,6 @@ in
     
     qFlipper
     ripgrep                           # grep replacement
-    rustdesk
     slack
     soundwireserver                   # pass audio to android phone
     stm32cubemx
