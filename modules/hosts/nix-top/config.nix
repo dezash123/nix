@@ -1,13 +1,13 @@
 { pkgs, config, ... }: 
 {
   imports = [
-    ../../hardware-configuration.nix
-    ../common
-    ../drivers/client_network.nix
-    ../drivers/audio.nix
-    ../drivers/flipper_zero.nix
-    ../home.nix
-    ../app/docker.nix
+    ./hardware-configuration.nix
+    ../../common
+    ../../drivers/client_network.nix
+    ../../drivers/audio.nix
+    ../../drivers/flipper_zero.nix
+    ../../home.nix
+    ../../app/docker.nix
   ];
 
   environment.systemPackages = with pkgs; [

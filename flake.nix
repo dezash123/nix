@@ -66,12 +66,12 @@
     nixosConfigurations = {
       nix-top = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ (import ./modules/hosts/nix-top.nix) ];
+        modules = [ (import ./modules/hosts/nix-top/config.nix) ];
         specialArgs = { host="nix-top"; inherit self inputs username ; };
       };
       bigserv = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ (import ./modules/hosts/bigserv.nix) ];
+        modules = [ (import ./modules/hosts/bigserv/config.nix) ];
         specialArgs = { host="bigserv"; inherit self inputs username ; };
       };
       lilserv = nixpkgs.lib.nixosSystem {
