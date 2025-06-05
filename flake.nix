@@ -8,8 +8,6 @@
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
   
-    alejandra.url = "github:kamadorueda/alejandra/3.0.0";
-  
     nix-gaming.url = "github:fufexan/nix-gaming";
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -23,7 +21,7 @@
       url = "https://github.com/hyprwm/Hyprland";
       submodules = true;
     };
-  
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,18 +31,9 @@
       url = "github:catppuccin/bat";
       flake = false;
     };
-    catppuccin-cava = {
-      url = "github:catppuccin/cava";
-      flake = false;
-    };
     catppuccin-starship = {
       url = "github:catppuccin/starship";
       flake = false;
-    };
-
-    spicetify-nix = {
-      url = "github:gerg-l/spicetify-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     probe-rs-rules = {
       url = "github:jneem/probe-rs-rules";

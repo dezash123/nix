@@ -15,6 +15,14 @@
       export ACT_HOME=/home/dezash/vlsi/act_install
       export EDITOR=nvim
       export PATH="$ACT_HOME/bin:/home/dezash/.cargo/bin:$PATH"
+      function yy() {
+      	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+      	yazi "$@" --cwd-file="$tmp"
+      	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+      		cd -- "$cwd"
+      	fi
+      	rm -f -- "$tmp"
+      }
     '';
     initExtra = ''
       fastfetch

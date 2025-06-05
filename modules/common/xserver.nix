@@ -3,7 +3,10 @@
   services = {
     xserver = {
       enable = true;
-      xkb.layout = "us";
+      xkb = {
+        layout = "us";
+        options = "grp:caps_toggle,grp_led:scroll";
+      };
     };
 
     displayManager.autoLogin = {
@@ -12,9 +15,9 @@
     };
     libinput = {
       enable = true;
-      # mouse = {
-      #   accelProfile = "flat";
-      # };
+      mouse = {
+        accelProfile = "flat";
+      };
     };
   };
   # To prevent getting stuck at shutdown

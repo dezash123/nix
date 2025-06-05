@@ -10,7 +10,7 @@
     ./hyprland
     ./kitty.nix
     ./swaync/swaync.nix
-    ./nixvim
+    ./nixvim.nix
     ./packages.nix
     ./scripts/scripts.nix
     ./starship.nix

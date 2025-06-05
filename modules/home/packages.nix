@@ -53,7 +53,7 @@ in
     jdk17                             # java
     jetbrains.pycharm-professional
     jupyter
-    kicad
+    kicad-unstable
     lazygit
     libreoffice
     magic-vlsi
@@ -76,7 +76,7 @@ in
     pipes                             # terminal screensaver
     pkg-config
     prismlauncher                     # minecraft launcher
-    
+    qalculate-gtk
     qFlipper
     ripgrep                           # grep replacement
     slack
@@ -131,7 +131,7 @@ in
     wget
     xdg-utils
     xxd
-    inputs.alejandra.defaultPackage.${system}
+    # inputs.alejandra.defaultPackage.${system}
 
     magic-vlsi
     # xyce
