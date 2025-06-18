@@ -6,6 +6,10 @@
     dbus.enable = true;
     fstrim.enable = true;
     onedrive.enable = true;
+    
+    # Bluetooth configuration
+    blueman.enable = true;
+    
     syncthing = {
         enable = true;
         user = "dezash";
@@ -15,7 +19,7 @@
 
   };
   services.logind.extraConfig = ''
-    # don’t shutdown when power button is short-pressed
+    # don't shutdown when power button is short-pressed
     HandlePowerKey=ignore
   '';
 }

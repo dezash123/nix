@@ -26,6 +26,18 @@
   };
 
   time.timeZone = "America/New_York";
+  
+  # Bluetooth configuration
+  hardware.bluetooth = {
+    enable = true;
+    powerOnBoot = true;
+    settings = {
+      General = {
+        Experimental = true;
+      };
+    };
+  };
+  
   i18n = {
     defaultLocale = "en_US.UTF-8";
     inputMethod = {

@@ -26,5 +26,11 @@
     tmux
     lsd
     yazi
+    
+    # Bluetooth utilities
+    bluetuith
+    
+    # Media
+    spotify
   ];
 }
