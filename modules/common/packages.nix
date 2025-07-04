@@ -26,6 +26,7 @@
     tmux
     lsd
     yazi
+    go
     
     # Bluetooth utilities
     bluetuith
