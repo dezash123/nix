@@ -15,7 +15,7 @@
       export ACT_HOME=/home/dezash/vlsi/act_install
       export EDITOR=nvim
       export PATH="$ACT_HOME/bin:/home/dezash/.cargo/bin:$PATH"
-      function yy() {
+      function y() {
       	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
       	yazi "$@" --cwd-file="$tmp"
       	if cwd="$(cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
@@ -43,8 +43,6 @@
       findw = "grep -rl";
       pdf = "tdf";
       open = "xdg-open";
-      y = "yazi";
-
 
       l = "lsd --group-directories-first"; #EZA_ICON_SPACING=2
       la = "lsd -A --group-directories-first";
@@ -82,6 +80,8 @@
       # python
       piv = "python -m venv .venv";
       psv = "source .venv/bin/activate";
+
+      gemini = "bunx @google/gemini-cli";
     };
   };
 

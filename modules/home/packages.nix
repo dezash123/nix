@@ -24,11 +24,13 @@ in
     bambu-studio
     bitwise                           # cli tool for bit / hex manipulation
     bottom
+    bun
     calibre
     cargo-generate
     cbonsai                           # terminal screensaver
     code-cursor
     chatgpt-cli
+    claude-code
     discord
     jetbrains.clion
     conda
@@ -59,6 +61,7 @@ in
     magic-vlsi
     nautilus     # file manager
     neovide
+    nodejs
     # nomachine-client
     nitch                             # systhem fetch util
     niv

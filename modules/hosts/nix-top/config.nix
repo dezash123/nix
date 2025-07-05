@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: 
+{ pkgs, config, inputs, host, self, username, ... }: 
 {
   imports = [
     ./hardware-configuration.nix
@@ -44,6 +44,8 @@
     #   };
     # };
   };
+
+  hardware.probe-rs.enable = true;
 
   powerManagement.cpuFreqGovernor = "performance";
 

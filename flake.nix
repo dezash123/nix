@@ -35,13 +35,10 @@
       url = "github:catppuccin/starship";
       flake = false;
     };
-    probe-rs-rules = {
-      url = "github:jneem/probe-rs-rules";
-      flake = false;
-    };
+    probe-rs-rules.url = "github:jneem/probe-rs-rules";
   };
 
-  outputs = { nixpkgs, self, ...} @ inputs:
+  outputs = { nixpkgs, self, probe-rs-rules, ...} @ inputs:
   let
     username = "dezash";
     system = "x86_64-linux";
@@ -55,7 +52,10 @@
     nixosConfigurations = {
       nix-top = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ (import ./modules/hosts/nix-top/config.nix) ];
+        modules = [
+          (import ./modules/hosts/nix-top/config.nix)
+          probe-rs-rules.nixosModules.${pkgs.system}.default
+        ];
         specialArgs = { host="nix-top"; inherit self inputs username ; };
       };
       bigserv = nixpkgs.lib.nixosSystem {
