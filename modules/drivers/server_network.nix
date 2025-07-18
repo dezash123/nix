@@ -1,6 +1,17 @@
 {
   services = {
-    openssh.enable = true;
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = true;
+        PermitRootLogin = "no";
+        X11Forwarding = false;
+        PrintMotd = false;
+        TCPKeepAlive = true;
+        ClientAliveInterval = 60;
+        ClientAliveCountMax = 3;
+      };
+    };
     fail2ban.enable = true;
     tailscale = {
       enable = true;
