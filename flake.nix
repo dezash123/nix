@@ -11,8 +11,6 @@
     nix-gaming.url = "github:fufexan/nix-gaming";
     nixvim = {
       url = "github:nix-community/nixvim";
-      # url = "github:mikaelfangel/nixvim-config";
-      # flake = false;
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -45,6 +43,7 @@
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
+      config.allowBroken = true;
     };
     lib = nixpkgs.lib;
   in

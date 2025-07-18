@@ -49,6 +49,8 @@
 
   powerManagement.cpuFreqGovernor = "performance";
 
+  
+
   boot = {
     kernelModules = ["acpi_call"];
     extraModulePackages = with config.boot.kernelPackages;

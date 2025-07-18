@@ -60,7 +60,6 @@ in
     libreoffice
     magic-vlsi
     nautilus     # file manager
-    neovide
     nodejs
     # nomachine-client
     nitch                             # systhem fetch util

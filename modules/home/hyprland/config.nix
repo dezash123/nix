@@ -1,4 +1,4 @@
-{ ... }: 
+_: 
 {
   wayland.windowManager.hyprland = {
     settings = {
@@ -292,6 +292,8 @@
         "noinitialfocus,class:^(xwaylandvideobridge)$"
         "maxsize 1 1,class:^(xwaylandvideobridge)$"
         "noblur,class:^(xwaylandvideobridge)$"
+
+        "fullscreen,class:^(neovide)$"
       ];
 
     };

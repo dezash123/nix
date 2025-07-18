@@ -1,4 +1,4 @@
-{ hostname, config, pkgs, host, lib, ...}: 
+{ host, lib, ...}: 
 {
   programs.zsh = {
     enable = true;
@@ -13,7 +13,7 @@
       DISABLE_MAGIC_FUNCTIONS=true
       export "MICRO_TRUECOLOR=1"
       export ACT_HOME=/home/dezash/vlsi/act_install
-      export EDITOR=nvim
+      export EDITOR=neovide
       export PATH="$ACT_HOME/bin:/home/dezash/.cargo/bin:$PATH"
       function y() {
       	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
@@ -29,7 +29,7 @@
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
 
       # Utils
-      n = "nvim";
+      n = "neovide";
       c = "clear";
       cd = "z";
       cb = "cd ..";

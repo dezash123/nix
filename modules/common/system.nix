@@ -1,4 +1,4 @@
-{ self, pkgs, lib, inputs, ...}: 
+{ pkgs, inputs, ...}: 
 {
   nix = {
     settings = {
@@ -21,6 +21,7 @@
         "tightvnc-1.3.10"
       ];
       allowBroken = true;
+      allowUnfree = true;
     };
     overlays = [ inputs.nur.overlays.default ];
   };
@@ -53,6 +54,6 @@
       ];           
     };
   };
-  nixpkgs.config.allowUnfree = true;
+  
   system.stateVersion = "24.05";
 }

@@ -10,6 +10,7 @@
     ./hyprland
     ./kitty.nix
     ./swaync/swaync.nix
+    ./neovide.nix
     ./nixvim/default.nix
     ./packages.nix
     ./scripts/scripts.nix

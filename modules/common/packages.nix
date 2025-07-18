@@ -27,6 +27,7 @@
     lsd
     yazi
     go
+    uv
     
     # Bluetooth utilities
     bluetuith

@@ -1,4 +1,4 @@
-{ inputs, username, host, ...}:
+{ inputs, username, host, config, ...}:
 {
   imports = [ inputs.home-manager.nixosModules.home-manager ];
   home-manager = {
@@ -10,9 +10,9 @@
         if (host == "nix-top") then 
           [ ./home/nix-top.nix ] 
         else if (host == "bigserv") then
-          [ ./../home/bigserv.nix ]
+          [ ./home/bigserv.nix ]
         else if (host == "bigserv") then
-          [ ./../home/lilserv.nix ]
+          [ ./home/lilserv.nix ]
         else
           throw "bad hostname!";
       home = {

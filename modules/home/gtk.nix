@@ -5,6 +5,7 @@
     # nerdfonts
     # nerdfonts.
     # nerdfonts.Noto
+    noto-fonts
     twemoji-color-font
     noto-fonts-emoji
   ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
@@ -12,7 +13,7 @@
   gtk = {
     enable = true;
     font = {
-      name = "JetBrainsMono Nerd Font";
+      name = "Noto Sans";
       size = 11;
     };
     iconTheme = {
