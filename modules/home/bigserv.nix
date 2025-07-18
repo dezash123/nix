@@ -6,7 +6,6 @@
     ./fastfetch.nix
     ./git.nix
     ./nixvim
-    ./starship.nix
     ./zsh.nix
   ];
 
