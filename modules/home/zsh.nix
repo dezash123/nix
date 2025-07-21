@@ -23,6 +23,7 @@
       	fi
       	rm -f -- "$tmp"
       }
+      tmux
       fastfetch
     '';
     shellAliases = {
@@ -33,9 +34,7 @@
       c = "clear";
       cd = "z";
       cb = "cd ..";
-      tt = "gtrash put";
       cat = "bat";
-      nano = "micro";
       code = "codium";
       py = "python";
       icat = "kitten icat";
@@ -44,7 +43,7 @@
       pdf = "tdf";
       open = "xdg-open";
 
-      l = "lsd --group-directories-first"; #EZA_ICON_SPACING=2
+      l = "lsd --group-directories-first";
       la = "lsd -A --group-directories-first";
       ll = "lsd -A --group-directories-first --long";
       tree = "lsd --tree --group-directories-first";

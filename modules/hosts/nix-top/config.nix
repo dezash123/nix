@@ -21,6 +21,7 @@
     # thermald.enable = true;
     # cpupower-gui.enable = true;
     power-profiles-daemon.enable = true;
+    tlp.enable = true;
  
     upower = {
       enable = true;
@@ -47,7 +48,11 @@
 
   hardware.probe-rs.enable = true;
 
-  powerManagement.cpuFreqGovernor = "performance";
+  powerManagement = {
+    enable = true;
+    cpuFreqGovernor = "powersave";
+    scsiLinkPolicy = "min_power";
+  };
 
   
 
