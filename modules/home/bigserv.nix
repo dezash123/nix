@@ -6,7 +6,7 @@
     ./fastfetch.nix
     ./git.nix
     ./nixvim
-    ./zsh.nix
+    ./zsh-bs.nix
   ];
 
   home.packages = with pkgs; [
