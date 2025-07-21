@@ -23,11 +23,11 @@
     neovim
     fastfetch
     btop
-    tmux
     lsd
     yazi
     go
     uv
+    # tmux
     
     # Bluetooth utilities
     bluetuith
