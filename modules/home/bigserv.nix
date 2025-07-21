@@ -4,6 +4,7 @@
     ./btop.nix
     ./direnv.nix
     ./fastfetch.nix
+    ./starship.nix
     ./git.nix
     ./nixvim
     ./zsh-bs.nix
