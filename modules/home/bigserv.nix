@@ -48,5 +48,6 @@
     openssl
     unzip
     wget
+    zenith-nvidia
   ];
 }
