@@ -23,7 +23,6 @@
     neovim
     fastfetch
     btop
-    tmux
     lsd
     yazi
     go
