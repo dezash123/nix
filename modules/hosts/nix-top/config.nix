@@ -20,7 +20,6 @@
   services = {    
     # thermald.enable = true;
     # cpupower-gui.enable = true;
-    power-profiles-daemon.enable = true;
     tlp.enable = true;
  
     upower = {
@@ -48,10 +47,13 @@
 
   hardware.probe-rs.enable = true;
 
-  powerManagement = {
-    enable = true;
-    cpuFreqGovernor = "powersave";
-    scsiLinkPolicy = "min_power";
+  powerManagement.enable = true;
+
+  services.tlp.settings = {
+    SATA_LINKPWR_ON_AC = "max_performance";
+    SATA_LINKPWR_ON_BAT = "min_power";
+    CPU_SCALING_GOVERNOR_ON_AC = "performance";
+    CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
   };
 
   

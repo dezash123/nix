@@ -17,7 +17,7 @@
     ./starship.nix
     ./swaylock.nix
     ./waybar
-    ./zsh.nix
+    ./zsh-nt.nix
   ];
 
   # Set default applications for file types
