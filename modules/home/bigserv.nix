@@ -51,5 +51,6 @@
     openssl
     unzip
     wget
+    docling
   ];
 }
