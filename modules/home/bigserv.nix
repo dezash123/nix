@@ -10,6 +10,8 @@
     ./zsh-bs.nix
   ];
 
+  programs.btop.package = pkgs.btop-cuda;
+
   home.packages = with pkgs; [
     bitwise                           # cli tool for bit / hex manipulation
     bottom
