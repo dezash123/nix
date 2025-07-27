@@ -2,10 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../common
-    ../../drivers/client_network.nix
-    ../../drivers/audio.nix
-    ../../drivers/flipper_zero.nix
+    ../../system
     ../../home.nix
   ];
 

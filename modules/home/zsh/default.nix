@@ -1,9 +1,5 @@
 { host, lib, ...}: {
-  imports = if (host == "nix-top") then [
-    ./nix-top.nix
-  ] else [
-    ./server.nix
-  ];
+  imports = if (host == "nix-top") then [./nix-top.nix] else [./server.nix];
 
   programs.zsh = {
     enable = true;

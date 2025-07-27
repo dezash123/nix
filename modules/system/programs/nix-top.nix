@@ -2,6 +2,10 @@
   environment.systemPackages = with pkgs; [
     bluetuith
     spotify
+    networkmanagerapplet
   ];
-  services.ollama.enable = true;
+
+  services = {
+    ollama.acceleration = "rocm";
+  };
 }

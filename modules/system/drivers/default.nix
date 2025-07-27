@@ -1,10 +1,8 @@
-_: {
-  imports = [
+{ host, ... }: {
+  imports = if host == "nix-top" then [
     ./audio.nix
-    ./client_network.nix
-    ./default.nix
     ./flipper_zero.nix
+  ] else [
     ./nvidia.nix
-    ./server_network.nix
   ];
 }

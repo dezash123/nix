@@ -1,16 +1,12 @@
 {inputs, username, host, pkgs, ...}: {
   imports = [
-    ./bat.nix
-    ./btop.nix
     ./direnv.nix
     ./fastfetch.nix
     ./starship.nix
     ./git.nix
     ./nixvim
-    ./zsh-bs.nix
+    ./zsh
   ];
-
-  programs.btop.package = pkgs.btop-cuda;
 
   home.packages = with pkgs; [
     bitwise                           # cli tool for bit / hex manipulation

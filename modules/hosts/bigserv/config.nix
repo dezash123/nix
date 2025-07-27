@@ -2,9 +2,7 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../common
-    ../../drivers/server_network.nix
-    ../../drivers/nvidia.nix
+    ../../system
     ../../home.nix
   ];  
   powerManagement.cpuFreqGovernor = "performance";

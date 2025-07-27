@@ -11,8 +11,6 @@ let
   _irsim = pkgs.callPackage ../../pkgs/irsim/package.nix {};
 in
 {
-  programs.btop.package = pkgs.btop-rocm;
-
   home.packages = with pkgs; [
     # _actflow
     # _irsim

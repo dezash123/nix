@@ -12,6 +12,4 @@
     };
     lfs.enable = true;
   };
-
-  # home.packages = [ pkgs.gh pkgs.git-lfs ];
 }

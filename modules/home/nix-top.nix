@@ -1,7 +1,5 @@
 {inputs, username, host, ...}: {
   imports = [
-    ./bat.nix
-    ./btop.nix
     ./direnv.nix
     ./fastfetch.nix
     ./fuzzel.nix
@@ -11,13 +9,13 @@
     ./kitty.nix
     ./swaync/swaync.nix
     ./neovide.nix
-    ./nixvim/default.nix
+    ./nixvim
     ./packages.nix
     ./scripts/scripts.nix
     ./starship.nix
     ./swaylock.nix
     ./waybar
-    ./zsh-nt.nix
+    ./zsh
     # ./zen.nix
   ];
 

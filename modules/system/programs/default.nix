@@ -1,8 +1,51 @@
-_: {
-  imports = [
-    ./docker.nix
-    ./ollama.nix
-    ./tmux.nix
+{ host, pkgs, ... }: 
+{
+  imports = if host == "nix-top" then [./nix-top.nix] else [./server.nix];
+
+  programs = {
+    dconf.enable = true;
+    zsh.enable = true;
+    gnupg.agent = {
+      enable = true;
+      enableSSHSupport = true;
+    };
+    nix-ld.enable = true;
+
+    git = {
+      enable = true;
+      lfs.enable = true;
+    };
+
+    yazi.enable = true;
+    neovim.enable = true;
+
+    tmux = {
+      enable = true;
+      clock24 = true;
+      plugins = with pkgs.tmuxPlugins; [ catppuccin weather cpu battery tmux-which-key ];
+    };
+
+    bat = {
+      enable = true;
+      settings = {
+        pager = "less -FR";
+        theme = "Dracula";
+      };
+    };
+  };
+
+  services = {
+    ollama.enable = true;
+  };
+
+  virtualisation.docker.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    wget
+    fastfetch
+    btop
+    lsd
+    go
+    uv
   ];
-  programs.yazi.enable = true;
 }

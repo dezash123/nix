@@ -9,12 +9,8 @@
       imports = 
         if (host == "nix-top") then 
           [ ./home/nix-top.nix ] 
-        else if (host == "bigserv") then
-          [ ./home/bigserv.nix ]
-        else if (host == "bigserv") then
-          [ ./home/lilserv.nix ]
         else
-          throw "bad hostname!";
+          [ ./home/server.nix ];
       home = {
         username = "${username}";
         homeDirectory = "/home/${username}";

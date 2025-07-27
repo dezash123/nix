@@ -4,9 +4,7 @@
     flipperzero.enable = true;
     graphics = {
       enable = true;
-      extraPackages = with pkgs; [
-    
-      ];
+      #extraPackages = with pkgs; [ ];
     };
     enableRedistributableFirmware = true;
   };
