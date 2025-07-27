@@ -43,7 +43,6 @@
   environment.systemPackages = with pkgs; [
     wget
     fastfetch
-    btop
     lsd
     go
     uv

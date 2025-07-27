@@ -1,5 +1,6 @@
 {inputs, username, host, ...}: {
   imports = [
+    ./btop.nix
     ./direnv.nix
     ./fastfetch.nix
     ./fuzzel.nix
