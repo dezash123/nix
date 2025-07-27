@@ -8,5 +8,4 @@
     };
     package = if (host == "nix-top") then pkgs.btop-rocm else pkgs.btop-cuda;
   };  
-  home.packages = with pkgs; [ nvtopPackages.intel ];
 }
