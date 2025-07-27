@@ -39,6 +39,7 @@
 
       # Nixos
       ns = "nix-shell --run zsh";
+      nsp = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
       nix-switch = "sudo nixos-rebuild switch --flake ~/nix#${host}";
       nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nix#${host}";
@@ -58,7 +59,7 @@
       gpso = "git push origin";
       gc   = "git commit";
       gcm  = "git commit -m";
-      gacm = "git add --all && git commit -m";
+      gacm = "git add . && git commit -m";
       gtag = "git tag -ma";
       gch  = "git checkout";
       gchb = "git checkout -b";
