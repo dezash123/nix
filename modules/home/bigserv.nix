@@ -49,6 +49,6 @@
     openssl
     unzip
     wget
-    zenith-nvidia
+    docling
   ];
 }
