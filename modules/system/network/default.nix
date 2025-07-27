@@ -7,4 +7,5 @@
     timeServers = options.networking.timeServers.default;
     firewall.enable = true;
   };
+  services.tailscale.enable = true;
 }
