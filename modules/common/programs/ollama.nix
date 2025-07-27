@@ -1,8 +1,8 @@
-{
+{ host, ... }: {
   services = {
     ollama = {
       enable = true;
-      acceleration = "cuda";
+      acceleration = if (host == "nix-top") then "rocm" else "cuda";
     };
     open-webui.enable = true;
   };

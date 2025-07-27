@@ -28,7 +28,6 @@
 
   time.timeZone = "America/New_York";
   
-  # Bluetooth configuration
   hardware.bluetooth = {
     enable = true;
     powerOnBoot = true;

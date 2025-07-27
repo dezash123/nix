@@ -135,13 +135,10 @@ in
     wget
     xdg-utils
     xxd
-    # inputs.alejandra.defaultPackage.${system}
 
+    # VLSI
     magic-vlsi
     # xyce
     yosys
-    
-    # _actflow
-    # inputs.zen-browser.packages."${system}".beta
   ];
 }

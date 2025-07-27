@@ -1,5 +1,4 @@
-{ inputs, nixpkgs, self, username, host, ...}:
-{
+_: {
   imports = [
     ./boot.nix
     ./network.nix
@@ -7,9 +6,9 @@
     ./security.nix
     ./services.nix
     ./system.nix
-    ./tmux.nix
     ./user.nix
     ./wayland.nix
     ./xserver.nix
+    ./programs
   ];
 }
