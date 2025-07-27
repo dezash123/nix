@@ -39,7 +39,6 @@
 
     zen-browser = {
       url = "0xc000022070/zen-browser-flake";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -71,7 +70,7 @@
       };
       lilserv = nixpkgs.lib.nixosSystem {
         inherit system;
-        modules = [ (import ./modules/hosts/lilserv.nix) ];
+        modules = [ (import ./modules/hosts/lilserv/config.nix) ];
         specialArgs = { host="lilserv"; inherit self inputs username ; };
       };
     };
