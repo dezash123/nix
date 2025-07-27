@@ -8,7 +8,7 @@
     ../../drivers/flipper_zero.nix
     ../../home.nix
     ../../app/docker.nix
-    ../../app/ollamaa-small.nix
+    ../../app/ollama-small.nix
   ];
 
   environment.systemPackages = with pkgs; [

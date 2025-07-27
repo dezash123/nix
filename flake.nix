@@ -29,11 +29,18 @@
       url = "github:catppuccin/bat";
       flake = false;
     };
+
     catppuccin-starship = {
       url = "github:catppuccin/starship";
       flake = false;
     };
+
     probe-rs-rules.url = "github:jneem/probe-rs-rules";
+
+    zen-browser = {
+      url = "0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { nixpkgs, self, probe-rs-rules, ...} @ inputs:

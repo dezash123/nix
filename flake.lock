@@ -862,7 +862,8 @@
         "nixpkgs": "nixpkgs_5",
         "nixvim": "nixvim",
         "nur": "nur",
-        "probe-rs-rules": "probe-rs-rules"
+        "probe-rs-rules": "probe-rs-rules",
+        "zen-browser": "zen-browser"
       }
     },
     "systems": {
@@ -980,6 +981,18 @@
         "repo": "xdg-desktop-portal-hyprland",
         "type": "github"
       }
+    },
+    "zen-browser": {
+      "flake": false,
+      "locked": {
+        "path": "0xc000022070/zen-browser-flake",
+        "type": "path"
+      },
+      "original": {
+        "path": "0xc000022070/zen-browser-flake",
+        "type": "path"
+      },
+      "parent": []
     }
   },
   "root": "root",

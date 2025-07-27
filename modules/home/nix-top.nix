@@ -18,6 +18,7 @@
     ./swaylock.nix
     ./waybar
     ./zsh-nt.nix
+    # ./zen.nix
   ];
 
   # Set default applications for file types
