@@ -96,7 +96,6 @@ in
     valgrind                          # c memory analyzer
     vscode
     vim
-    yazi                              # terminal file manager
     yt-dlp-light
     x2goclient
     zenity
