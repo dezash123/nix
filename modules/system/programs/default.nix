@@ -32,6 +32,12 @@
         theme = "Dracula";
       };
     };
+
+    direnv = {
+      enable = true;
+      enableZshIntegration = true; # see note on other shells below
+      nix-direnv.enable = true;
+    };
   };
 
   services = {
@@ -41,6 +47,7 @@
   virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
+    bun
     wget
     fastfetch
     lsd

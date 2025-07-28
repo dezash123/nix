@@ -13,6 +13,7 @@
       options = "--delete-older-than 7d";
     };
   };
+  
   nixpkgs = {
     config = {
       permittedInsecurePackages = [
@@ -28,31 +29,7 @@
 
   time.timeZone = "America/New_York";
   
-  hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
-    settings = {
-      General = {
-        Experimental = true;
-      };
-    };
-  };
+  i18n.defaultLocale = "en_US.UTF-8";
   
-  i18n = {
-    defaultLocale = "en_US.UTF-8";
-    inputMethod = {
-      type = "fcitx5";
-      enable = true;
-      fcitx5.addons = with pkgs; [
-        fcitx5-mozc
-        fcitx5-gtk 
-        fcitx5-chinese-addons
-	      fcitx5-nord
-        fcitx5-rime
-	      rime-data
-      ];           
-    };
-  };
-  
-  system.stateVersion = "24.05";
+  system.stateVersion = "24.11";
 }
