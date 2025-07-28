@@ -22,21 +22,15 @@ in {
     
     runbg
     music
-    lofi
   
     toggle_blur
     toggle_oppacity
-
-    compress
-    extract
 
     shutdown-script
     
     show-keybinds
 
     vm-start
-
-    ascii
 
     record
   ];
