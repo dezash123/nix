@@ -1,16 +1,15 @@
 {inputs, username, host, ...}: {
   imports = [
     ./btop.nix
-    ./direnv.nix
     ./fastfetch.nix
     ./fuzzel.nix
     ./git.nix
     ./gtk.nix
     ./hyprland
     ./kitty.nix
-    ./swaync/swaync.nix
     ./neovide.nix
     ./nixvim
+    ./swaync
     ./packages.nix
     ./scripts/scripts.nix
     ./starship.nix
@@ -56,7 +55,7 @@
       "application/vnd.ms-powerpoint" = "libreoffice-impress.desktop"; # .ppt
       "application/vnd.oasis.opendocument.presentation" = "libreoffice-impress.desktop"; # .odp
       
-      # E-books - Calibre
+      # E-books -btop Calibre
       "application/epub+zip" = "calibre-ebook-viewer.desktop"; # .epub
       "application/x-mobipocket-ebook" = "calibre-ebook-viewer.desktop"; # .mobi
       "application/x-amazon-ebook" = "calibre-ebook-viewer.desktop"; # .azw

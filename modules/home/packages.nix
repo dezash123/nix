@@ -23,18 +23,12 @@ in
     audacity
     bambu-studio
     bitwise                           # cli tool for bit / hex manipulation
-    bottom
-    bun
-    calibre
     cargo-generate
     cbonsai                           # terminal screensaver
     code-cursor
     chatgpt-cli
     claude-code
     discord
-    jetbrains.clion
-    conda
-    evince                            # gnome pdf viewer
     lsd                               # ls replacement
     entr                              # perform action when file change
     fastfetch			      # better neofetch
@@ -53,7 +47,6 @@ in
     hexdump
     imagemagick
     jdk17                             # java
-    jetbrains.pycharm-professional
     jupyter
     kicad-unstable
     lazygit
@@ -85,8 +78,6 @@ in
     soundwireserver                   # pass audio to android phone
     stm32cubemx
     tdf                               # cli pdf viewer
-    teensyduino
-    teensy-udev-rules
     texliveFull
     todo                              # cli todo list
     toipe                             # typing test in the terminal
@@ -107,11 +98,7 @@ in
 
     rustup
 
-    # Python
-    # python3
-
     bleachbit                         # cache cleaner
-    cmatrix
     gparted                           # partition manager
     ffmpeg
     imv                               # image viewer
@@ -129,7 +116,6 @@ in
     poweralertd
     qalculate-gtk                     # calculator
     unzip
-    wget
     xdg-utils
     xxd
 
