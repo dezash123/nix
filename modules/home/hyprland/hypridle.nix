@@ -7,10 +7,10 @@
           after_sleep_cmd = "hyprctl dispatch dpms on";
           ignore_dbus_inhibit = false;
           lock_cmd = "swaylock";
-          };
+        };
         listener = [
           {
-            timeout = 900;
+            timeout = 300;
             on-timeout = "swaylock";
           }
           {

@@ -1,4 +1,3 @@
-_: 
 {
   wayland.windowManager.hyprland = {
     settings = {
@@ -16,8 +15,6 @@ _:
         "waybar &"
         "swaync &"
         "wl-paste --watch cliphist store &"
-        # "fcitx5 -d -r &"
-        # "fcitx5-remote -r &"
         "hyprlock"
       ];
 
@@ -225,6 +222,13 @@ _:
 
         # clipboard manager
         "$mainMod, V, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
+
+        # locking
+
+      ];
+
+      bindl = [
+        ",switch:on:Lid Switch, exec, swaylock"
       ];
 
       # mouse binding

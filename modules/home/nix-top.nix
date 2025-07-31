@@ -18,6 +18,15 @@
     ./zsh
     # ./zen.nix
   ];
+  programs = {
+    bat = {
+      enable = true;
+      config = {
+        pager = "less -FR";
+        theme = "Dracula";
+      };
+    };
+  };
 
   # Set default applications for file types
   xdg.mimeApps = {

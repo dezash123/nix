@@ -25,14 +25,6 @@
       plugins = with pkgs.tmuxPlugins; [ catppuccin weather cpu battery tmux-which-key ];
     };
 
-    bat = {
-      enable = true;
-      settings = {
-        pager = "less -FR";
-        theme = "Dracula";
-      };
-    };
-
     direnv = {
       enable = true;
       enableZshIntegration = true; # see note on other shells below
