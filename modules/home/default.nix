@@ -8,9 +8,20 @@
     users.${username} = {
       imports = 
         if (host == "nix-top") then 
-          [ ./home/nix-top.nix ] 
+          [ ./nix-top.nix ] 
         else
-          [ ./home/server.nix ];
+          [ ./server.nix ]
+          ++ [
+            ./bat.nix
+            ./btop.nix
+            ./fastfetch.nix
+            ./packages
+            ./scripts/scripts.nix
+            ./starship.nix
+            ./git.nix
+            ./nixvim
+            ./zsh
+          ];
       home = {
         username = "${username}";
         homeDirectory = "/home/${username}";
