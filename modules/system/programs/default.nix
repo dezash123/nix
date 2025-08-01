@@ -40,10 +40,10 @@
 
   environment.systemPackages = with pkgs; [
     bun
-    wget
-    fastfetch
-    lsd
     go
-    uv
+    lsd    # better ls
+    statix # nix linter
+    uv     # better pip
+    wget
   ];
 }
