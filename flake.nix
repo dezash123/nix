@@ -51,7 +51,7 @@
       config.allowUnfree = true;
       config.allowBroken = true;
     };
-    lib = nixpkgs.lib;
+    inherit (nixpkgs) lib;
   in
   {
     nixosConfigurations = {

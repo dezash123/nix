@@ -1,4 +1,4 @@
-{ ... }:
+_:
 let custom = {
     font = "JetBrainsMono Nerd Font";
     font_size = "15px";
