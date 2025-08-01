@@ -9,6 +9,7 @@
     ./programs
     ./network
     ./graphics
+    ./home.nix
   ] else [
     ./boot.nix
     ./security.nix
@@ -18,5 +19,6 @@
     ./drivers
     ./programs
     ./network
+    ./home.nix
   ];
 }

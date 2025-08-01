@@ -1,3 +1,3 @@
-{
-  # todo: add server specific things (none yet)
+{ 
+  # todo: add server specific things
 }

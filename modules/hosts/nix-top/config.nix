@@ -3,7 +3,6 @@
   imports = [
     ./hardware-configuration.nix
     ../../system
-    ../../home.nix
   ];
 
   environment.systemPackages = with pkgs; [
