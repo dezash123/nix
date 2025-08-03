@@ -21,6 +21,11 @@
       	fi
       	rm -f -- "$tmp"
       }
+      
+      # Auto-start Hyprland on TTY1
+      if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
+        exec uwsm start hyprland-uwsm.desktop
+      fi
     '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
@@ -41,9 +46,9 @@
       ns = "nix-shell --run zsh";
       nsp = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
-      nix-switch = "sudo nixos-rebuild switch --flake ~/nix#${host}";
-      nix-switchu = "sudo nixos-rebuild switch --upgrade --flake ~/nix#${host}";
-      nix-flake-update = "sudo nix flake update ~/nix#";
+      nsw = "sudo nixos-rebuild switch --flake ~/nix#${host}";
+      nswu = "sudo nixos-rebuild switch --upgrade --flake ~/nix#${host}";
+      nix-flake-update = "sudo nix flake update ~/nix#${host}";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
 
       # Git
@@ -65,8 +70,8 @@
       gchb = "git checkout -b";
 
       # python
-      piv = "python -m venv .venv";
-      psv = "source .venv/bin/activate";
+      mkvenv = "uv venv --seed";
+      avenv = "source .venv/bin/activate";
 
       gemini = "bunx @google/gemini-cli";
     };

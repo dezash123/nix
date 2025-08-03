@@ -7,12 +7,9 @@
         layout = "us";
         options = "grp:caps_toggle,grp_led:scroll";
       };
+      displayManager.lightdm.enable = false;
     };
 
-    displayManager.autoLogin = {
-      enable = true;
-      user = "${username}";
-    };
     libinput = {
       enable = true;
       mouse = {
