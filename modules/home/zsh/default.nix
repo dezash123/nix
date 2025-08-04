@@ -40,7 +40,7 @@
       l = "lsd --group-directories-first"; #EZA_ICON_SPACING=2
       la = "lsd -A --group-directories-first";
       ll = "lsd -A --group-directories-first --long";
-      tr = "lsd --tree --group-directories-first";
+      tree = "lsd --tree --group-directories-first";
 
       # Nixos
       ns = "nix-shell --run zsh";
