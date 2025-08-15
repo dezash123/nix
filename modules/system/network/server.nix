@@ -15,5 +15,5 @@
     fail2ban.enable = true;
     tailscale.useRoutingFeatures = "server";
   };
-  networking.firewall.allowedTCPPorts = [ 22 8080 11434 ];
+  networking.firewall.allowedTCPPorts = [ 22 8080 11434 3000 8000 ];
 }
