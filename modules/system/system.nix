@@ -20,6 +20,7 @@
         "electron-31.7.7"
         "electron-27.3.11"
         "tightvnc-1.3.10"
+        "libsoup-2.74.3"
       ];
       allowBroken = true;
       allowUnfree = true;

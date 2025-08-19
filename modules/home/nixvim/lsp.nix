@@ -31,7 +31,6 @@ _:
       };
     };
     rustaceanvim.enable = true;
-    lspconfig.enable = true;
     # error highlighting/explanation
     trouble.enable = true;
     # formatting help; maybe also lsp?
