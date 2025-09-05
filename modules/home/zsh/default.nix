@@ -21,11 +21,8 @@
       	fi
       	rm -f -- "$tmp"
       }
-      
-      # Auto-start Hyprland on TTY1
-      if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then
-        exec uwsm start hyprland-uwsm.desktop
-      fi
+
+      [[ ! -r '/home/dezash/.opam/opam-init/init.zsh' ]] || source '/home/dezash/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
     '';
     shellAliases = {
       # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";

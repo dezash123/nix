@@ -13,6 +13,7 @@
     hexdump
     jupyter
     lazygit
+    ncdu                              # disk space
     nitch                             # systhem fetch util
     niv
     nix-prefetch-github

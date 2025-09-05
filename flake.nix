@@ -37,9 +37,7 @@
 
     probe-rs-rules.url = "github:jneem/probe-rs-rules";
 
-    # zen-browser = {
-    #   url = "0xc000022070/zen-browser-flake";
-    # };
+    zen-browser.url = "0xc000022070/zen-browser-flake";
   };
 
   outputs = { nixpkgs, self, probe-rs-rules, ...} @ inputs:

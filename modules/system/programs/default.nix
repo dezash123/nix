@@ -50,6 +50,7 @@
     statix # nix linter
     uv     # better pip
     wget
+    typst
     python313Packages.huggingface-hub
   ];
 }

@@ -2,7 +2,6 @@
 {
   home.packages = with pkgs; [
     bambu-studio
-    code-cursor
     discord
     firefox
     gifsicle                          # gif utility
@@ -11,10 +10,8 @@
     kicad-unstable
     libreoffice
     nautilus     # file manager
-    # nomachine-client
     obsidian
     ocrmypdf
-    # inputs.nixvim.packages.${system}.default    
     p7zip
     pdfmm
     pdftk
@@ -25,7 +22,6 @@
     soundwireserver                   # pass audio to android phone
     tdf                               # cli pdf viewer
 
-    vscode
     yt-dlp-light
     x2goclient
     zenity
@@ -39,7 +35,6 @@
     libnotify
 	  man-pages					            	  # extra man pages
     mpv                               # video player
-    ncdu                              # disk space
     openssl
     pamixer                           # pulseaudio command line mixer
     pavucontrol                       # pulseaudio volume controle (GUI)
@@ -54,5 +49,8 @@
     magic-vlsi
     # xyce
     yosys
+
+    # code
+    zed-editor
   ];
 }
