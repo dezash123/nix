@@ -1,4 +1,3 @@
-_:
 {
   programs.nixvim.plugins = {
     lsp = {
@@ -19,8 +18,13 @@ _:
         lua_ls.enable = true;
         markdown_oxide.enable = true;
         nixd.enable = true;
+        ocamllsp.enable = true;
         postgres_lsp.enable = true;
         ruff.enable = true;
+        starlark_rust.enable = true;
+        svelte.enable = true;
+        tailwindcss.enable = true;
+        yamlls.enable = true;
       };
       keymaps.lspBuf = {
         "gd" = "definition";

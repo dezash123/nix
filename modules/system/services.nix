@@ -1,4 +1,3 @@
-_: 
 {
   services = {
     gvfs.enable = true;
@@ -8,8 +7,5 @@ _:
     onedrive.enable = true;
     blueman.enable = true;
   };
-  services.logind.extraConfig = ''
-    # don't shutdown when power button is short-pressed
-    HandlePowerKey=ignore
-  '';
+  services.logind.settings.Login.HandlePowerKey="ignore";
 }

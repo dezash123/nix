@@ -1,9 +1,10 @@
-{ pkgs, ... }: 
+{ pkgs, system, inputs, ... }: 
 {
   home.packages = with pkgs; [
     bambu-studio
     discord
     firefox
+    inputs.zen-browser.packages.x86_64-linux.twilight
     gifsicle                          # gif utility
     gimp
     gtkwave

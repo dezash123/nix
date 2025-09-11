@@ -29,10 +29,14 @@
 	        clickfinger_behavior = true;
         };
       };
-
+      gesture = [
+        "3,horizontal,workspace,"
+      ];
       gestures = {
-      	workspace_swipe = true;
+        workspace_swipe_forever = true;
+        workspace_swipe_direction_lock = false;
         workspace_swipe_invert = false;
+        workspace_swipe_distance = 150;
       };
 
       general = {
@@ -73,9 +77,6 @@
 
       decoration = {
         rounding = 10; # = 15 - outside_gap
-        # active_opacity = 0.90;
-        # inactive_opacity = 0.90;
-        # fullscreen_opacity = 1.0;
 
         blur = {
           enabled = true;
@@ -126,6 +127,8 @@
           "borderangle, 1, 30, fluent_decel, once" # for animating the border's gradient angle - styles: once (default), loop
           "workspaces, 1, 4, easeOutCubic, fade" # styles: slide, slidevert, fade, slidefade, slidefadevert
         ];
+
+        workspace_wraparound = true;
       };
 
       bind = [
