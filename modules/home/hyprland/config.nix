@@ -33,10 +33,11 @@
         "3,horizontal,workspace,"
       ];
       gestures = {
-        workspace_swipe_forever = true;
-        workspace_swipe_direction_lock = false;
+        # workspace_swipe_forever = true;
+        # workspace_swipe_direction_lock = false;
+        # workspace_swipe_distance = 225;
+
         workspace_swipe_invert = false;
-        workspace_swipe_distance = 150;
       };
 
       general = {

@@ -11,6 +11,7 @@
       plugins = [ "git" "fzf" ];
     };
     initContent = lib.mkBefore ''
+      export PATH="$HOME/.cargo/bin:$PATH"
       DISABLE_MAGIC_FUNCTIONS=true
       export EDITOR=nvim
       function y() {
@@ -31,10 +32,9 @@
       c = "clear";
       cd = "z";
       cat = "bat";
-      code = "codium";
       py = "python";
 
-      l = "lsd --group-directories-first"; #EZA_ICON_SPACING=2
+      l = "lsd --group-directories-first";
       la = "lsd -A --group-directories-first";
       ll = "lsd -A --group-directories-first --long";
       tree = "lsd --tree --group-directories-first";

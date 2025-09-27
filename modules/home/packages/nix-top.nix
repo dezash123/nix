@@ -8,7 +8,8 @@
     gifsicle                          # gif utility
     gimp
     gtkwave
-    kicad-unstable
+    kicad
+    # python312Packages.kicad
     libreoffice
     nautilus     # file manager
     obsidian
@@ -51,7 +52,9 @@
     # xyce
     yosys
 
-    # code
+    vscode
     zed-editor
+
+    tigervnc
   ];
 }

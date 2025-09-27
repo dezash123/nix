@@ -18,10 +18,23 @@
         lua_ls.enable = true;
         markdown_oxide.enable = true;
         nixd.enable = true;
-        ocamllsp.enable = true;
+        ocamllsp = {
+          enable = true;
+        };
         postgres_lsp.enable = true;
         ruff.enable = true;
-        starlark_rust.enable = true;
+        starlark_rust = {
+          enable = true;
+          settings = {
+            cmd = [
+              "pcb"
+              "lsp"
+            ];
+            filetypes = [
+              "zen"
+            ];
+          };
+        };
         svelte.enable = true;
         tailwindcss.enable = true;
         yamlls.enable = true;

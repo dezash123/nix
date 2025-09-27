@@ -1,4 +1,3 @@
-_:
 {
   programs.nixvim.plugins = {
 
@@ -35,7 +34,7 @@ _:
     nvim-tree = {
       enable = true;
       openOnSetupFile = true;
-      autoReloadOnWrite = true;
+      settings.auto_reload_on_write = true;
     };
 
     # bar on the bottom
