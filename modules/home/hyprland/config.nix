@@ -14,8 +14,7 @@
         "poweralertd &"
         "waybar &"
         "swaync &"
-        "wl-paste --watch cliphist store &"
-        "hyprlock"
+        "wl-paste --watch cliphist store"
       ];
 
       input = {
