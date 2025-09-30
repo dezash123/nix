@@ -264,6 +264,9 @@
         "size 700 450,title:^(Volume Control)$"
         "move 40 55%,title:^(Volume Control)$"
         "pin,title:^(openwhisper)$"
+        "float,class:^(.blueman-manager-wrapped)$"
+        "float,title:^(Firefox.*Popup)$"
+        "float,title:^(.*Firefox.*Dialog)$"
       ];
 
       # windowrulev2
