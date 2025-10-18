@@ -44,8 +44,7 @@
       nsp = "nix-shell --run zsh -p";
       nix-shell = "nix-shell --run zsh";
       nsw = "sudo nixos-rebuild switch --flake ~/nix#${host}";
-      nswu = "sudo nixos-rebuild switch --upgrade --flake ~/nix#${host}";
-      nix-flake-update = "sudo nix flake update ~/nix#${host}";
+      nswu = "nix flake update && sudo nixos-rebuild switch --upgrade --flake ~/nix#${host}";
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
 
       # Git

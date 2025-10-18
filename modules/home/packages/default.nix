@@ -4,6 +4,7 @@
     bitwise                           # cli tool for bit / hex manipulation
     cargo-generate
     claude-code
+    codex
     fd                                # find replacement
     file                              # Show file information 
     fzf                               # fuzzy finder
@@ -34,6 +35,5 @@
 
     openssl
     unzip
-    docling
   ];
 }

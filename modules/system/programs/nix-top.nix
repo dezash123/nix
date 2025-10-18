@@ -5,11 +5,7 @@
     networkmanagerapplet
   ];
 
-  services = {
-    ollama.acceleration = "rocm";
-  };
-
-  ## chinese
+  # china
   i18n.inputMethod = {
     type = "fcitx5";
     enable = true;

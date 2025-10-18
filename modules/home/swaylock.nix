@@ -5,7 +5,8 @@
     package = pkgs.swaylock-effects;
     settings = {
       clock = true;
-      datestr = "";
+      timestr = "%-I:%M:%S";
+      datestr = "%A, %-m/%-d/%y";
       screenshots = true;
       
       indicator = true;
