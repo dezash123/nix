@@ -7,7 +7,7 @@ _:
     # menu autocomplete
     wilder = {
       enable = true;
-      modes = [ ":" "/" "?" ];
+      settings.modes = [ ":" "/" "?" ];
     };
     # keymap hints
     which-key.enable = true;

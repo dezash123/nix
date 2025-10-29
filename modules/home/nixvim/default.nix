@@ -7,6 +7,7 @@
     ./keymaps.nix
     #./lazy.nix
     ./lsp.nix
+    ./obsidian.nix
     ./options.nix
     ./utils.nix
     ./ui.nix

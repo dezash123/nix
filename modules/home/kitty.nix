@@ -1,4 +1,3 @@
-{ pkgs, ... }: 
 {
   programs.kitty = {
     enable = true;
@@ -28,6 +27,9 @@
       active_tab_background = "#cba6f7";
       inactive_tab_foreground = "#bac2de";
       inactive_tab_background = "#313244";
+
+      cursor_trail = 10;
+      cursor_trail_decay = "0.1 0.4";
     };
 
     keybindings = {  
