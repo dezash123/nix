@@ -42,6 +42,14 @@
     background-clip: border-box;
 }
 
+window.floating {
+  background: transparent;
+}
+
+window.floating > box {
+  background: transparent;
+}
+
 /* #notifications_box { */
 /*   border: solid 4px red; */
 /* } */
@@ -50,7 +58,28 @@ label {
   color: @text;
 }
 
-.notification {
+.floating-notifications {
+  background: transparent;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.floating-notifications > box {
+  background: transparent;
+  min-height: 0;
+  padding: 0;
+  margin: 0;
+}
+
+.floating-notifications .notification {
+    border: @lavender;
+    box-shadow: none;
+    border-radius: 4px;
+    background: inherit;
+}
+
+.control-center .notification {
     border: @lavender;
     box-shadow: none;
     /* margin: 0px; */
@@ -75,7 +104,14 @@ label {
 }
 
 
-.notification-content {
+.floating-notifications .notification-content {
+    min-height: unset;
+    margin: 10px;
+    padding: 0px;
+    border-radius: 0px;
+}
+
+.control-center .notification-content {
     min-height: 64px;
     margin: 10px;
     padding: 0px;
@@ -458,7 +494,7 @@ carouselindicatordots {
 
 .notification-group > box.vertical {
   /* border: solid 5px red; */
-  margin-top: 3px
+  margin-top: 3px;
 }
 
 /* Backlight and volume widgets */

@@ -50,6 +50,8 @@
     magic-vlsi
     # xyce
     yosys
+    irsim
+    actflow
 
     vscode
     zed-editor

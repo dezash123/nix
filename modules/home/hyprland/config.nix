@@ -310,7 +310,9 @@
     };
 
     extraConfig = "
-      monitor=,highres,auto,2
+      monitor=eDP-1,2880x1920@120,auto,2
+      monitor=DP-3,3440x1440@100,auto,1
+      monitor=,preferred,auto,1
 
       xwayland {
         force_zero_scaling = true

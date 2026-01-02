@@ -3,11 +3,12 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    nixpkgs-ocaml-4-13.url = "github:NixOS/nixpkgs/34bfa9403e42eece93d1a3740e9d8a02fceafbca";
     nur.url = "github:nix-community/NUR";
-  
+
     hypr-contrib.url = "github:hyprwm/contrib";
     hyprpicker.url = "github:hyprwm/hyprpicker";
-  
+
     nix-gaming.url = "github:fufexan/nix-gaming";
     nixvim = {
       url = "github:nix-community/nixvim";
@@ -43,24 +44,42 @@
     };
   };
 
-  outputs = { nixpkgs, self, probe-rs-rules, ...} @ inputs:
+  outputs = { nixpkgs, nixpkgs-ocaml-4-13, self, probe-rs-rules, ...} @ inputs:
   let
-    username = "dezash";
     system = "x86_64-linux";
+    username = "dezash";
+
+    # Overlay to provide old ocaml-lsp
+    ocamlOverlay = final: prev:
+      let
+        pkgs-ocaml-old = import nixpkgs-ocaml-4-13 {
+          inherit system;
+          config.allowUnfree = true;
+        };
+      in
+      {
+        ocaml-lsp-old = pkgs-ocaml-old.ocamlPackages.ocaml-lsp;
+      };
+
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
       config.allowBroken = true;
+      overlays = [ (import ./pkgs) ocamlOverlay ];
     };
-    inherit (nixpkgs) lib;
   in
   {
+    packages.${system} = {
+      inherit (pkgs) irsim actflow;
+    };
+
     nixosConfigurations = {
       nix-top = nixpkgs.lib.nixosSystem {
         inherit system;
         modules = [
           (import ./modules/hosts/nix-top/config.nix)
           probe-rs-rules.nixosModules.${pkgs.system}.default
+          { nixpkgs.overlays = [ (import ./pkgs) ocamlOverlay ]; }
         ];
         specialArgs = { host="nix-top"; inherit self inputs username ; };
       };

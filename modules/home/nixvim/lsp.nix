@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 {
   programs.nixvim.plugins = {
     lsp = {
@@ -20,6 +21,7 @@
         nixd.enable = true;
         ocamllsp = {
           enable = true;
+          package = pkgs.ocaml-lsp-old;
         };
         postgres_lsp.enable = true;
         ruff.enable = true;

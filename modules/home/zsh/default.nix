@@ -12,6 +12,7 @@
     };
     initContent = lib.mkBefore ''
       export PATH="$HOME/.cargo/bin:$PATH"
+      export CAD_ROOT="$HOME/.cad"
       DISABLE_MAGIC_FUNCTIONS=true
       export EDITOR=nvim
       function y() {
@@ -30,7 +31,6 @@
 
       # Utils
       c = "clear";
-      cd = "z";
       cat = "bat";
       py = "python";
 

@@ -7,7 +7,7 @@
     # nerdfonts.Noto
     noto-fonts
     twemoji-color-font
-    noto-fonts-emoji
+    noto-fonts-color-emoji
   ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   gtk = {
