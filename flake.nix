@@ -49,23 +49,10 @@
     system = "x86_64-linux";
     username = "dezash";
 
-    # Overlay to provide old ocaml-lsp
-    ocamlOverlay = final: prev:
-      let
-        pkgs-ocaml-old = import nixpkgs-ocaml-4-13 {
-          inherit system;
-          config.allowUnfree = true;
-        };
-      in
-      {
-        ocaml-lsp-old = pkgs-ocaml-old.ocamlPackages.ocaml-lsp;
-      };
-
     pkgs = import nixpkgs {
       inherit system;
       config.allowUnfree = true;
       config.allowBroken = true;
-      overlays = [ (import ./pkgs) ocamlOverlay ];
     };
   in
   {
@@ -79,7 +66,6 @@
         modules = [
           (import ./modules/hosts/nix-top/config.nix)
           probe-rs-rules.nixosModules.${pkgs.system}.default
-          { nixpkgs.overlays = [ (import ./pkgs) ocamlOverlay ]; }
         ];
         specialArgs = { host="nix-top"; inherit self inputs username ; };
       };

@@ -19,10 +19,7 @@
         lua_ls.enable = true;
         markdown_oxide.enable = true;
         nixd.enable = true;
-        ocamllsp = {
-          enable = true;
-          package = pkgs.ocaml-lsp-old;
-        };
+        ocamllsp.enable = true;
         postgres_lsp.enable = true;
         ruff.enable = true;
         starlark_rust = {

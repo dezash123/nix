@@ -1,10 +1,10 @@
-{  
+{pkgs, ...}: {  
   services = {
     ollama = {
       enable = true;
       host = "0.0.0.0";
-      acceleration = "cuda";
+      package = pkgs.ollama-cuda;
     };
-    open-webui.enable = true;
+    # open-webui.enable = true;
   };
 }
