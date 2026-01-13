@@ -39,11 +39,11 @@
   environment.systemPackages = with pkgs; [
     bun
     go
-    lsd    # better ls
-    statix # nix linter
-    uv     # better pip
+    lsd
+    statix
+    uv
+    jq
     wget
     typst
-    python313Packages.huggingface-hub
   ];
 }

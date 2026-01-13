@@ -70,6 +70,8 @@
       avenv = "source .venv/bin/activate";
 
       gemini = "bunx @google/gemini-cli";
+
+      clod = "claude";
     };
   };
 
