@@ -10,6 +10,7 @@
     fzf                               # fuzzy finder
     gtt                               # google translate TUI
     gh
+    glab
     gtrash                            # rm replacement, put deleted files in system trash
     hexdump
     jupyter
