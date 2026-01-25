@@ -19,7 +19,7 @@ _:
         "tray" 
         "cpu"
         "memory"
-        "disk"
+      # "disk"
         "pulseaudio" 
         "battery"
         "network"
@@ -29,10 +29,10 @@ _:
         calendar = {
           format = { today = "<span color='#b4befe'><b><u>{}</u></b></span>"; };
         };
-        format = " {:%I:%M:%S}";
+        format = "{:%I:%M:%S}";
         tooltip= "true";
-        tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt= " {:%m/%d/%Y}";
+        tooltip-format= "<tt><small>{calendar}</small></tt>";
+        format-alt= "{:%m/%d/%Y}";
 	interval = 1;
     };
     "hyprland/workspaces"= {
@@ -40,40 +40,40 @@ _:
         disable-scroll= true;
         format = "{icon}";
         on-click= "activate";
-        format-icons= {
-            "1"= "󰈹";
-            "2"= "";
-            "3"= "󰘙";
-            "4"= "󰙯";
-            "5"= "";
-            "6"= "";
-            urgent= "";
-            default = "";
-            sort-by-number= true;
-        };
-        persistent-workspaces = {
-            "1"= [];
-            "2"= [];
-            "3"= [];
-            "4"= [];
-            "5"= [];
-        };
+        # format-icons= {
+        #     "1"= "󰈹";
+        #     "2"= "";
+        #     "3"= "󰘙";
+        #     "4"= "󰙯";
+        #     "5"= "";
+        #     "6"= "";
+        #     urgent= "";
+        #     default = "";
+        #     sort-by-number= true;
+        # };
+        #persistent-workspaces = {
+        #    "1"= [];
+        #    "2"= [];
+        #    "3"= [];
+        #    "4"= [];
+        #    "5"= [];
+        #};
     };
     memory= {
-        format-alt = "󰟜 {}%";
-        format = "󰟜 {used} GiB"; # 
+        format-alt = "RAM {}%";
+        format = "{used} GiB";
         interval = 2;
     };
     cpu= {
-        format= "  {usage}%";
-        format-alt= "  {avg_frequency} GHz";
+        format= "CPU {usage}%";
+        format-alt= "{avg_frequency} GHz";
         interval= 2;
     };
-    disk = {
-        # path = "/";
-        format = "󰋊 {percentage_used}%";
-        interval= 60;
-    };
+    # disk = {
+    #     # path = "/";
+    #     format = "󰋊 {percentage_used}%";
+    #     interval= 60;
+    # };
     network = {
         format-wifi = "  {signalStrength}%";
         format-ethernet = "󰀂 ";
@@ -86,11 +86,8 @@ _:
         spacing= 8;
     };
     pulseaudio= {
-        format= "{icon} {volume}%";
+        format= "  {volume}%";
         format-muted= "  {volume}%";
-        format-icons= {
-            default= [" "];
-        };
         scroll-step= 5;
         on-click= "pamixer -t";
     };
@@ -107,12 +104,6 @@ _:
         format-time = "{H}h{M}m";
         tooltip = true;
         tooltip-format = "{time}";
-    };
-    "custom/launcher"= {
-        format= "";
-        on-click= "fuzzel";
-        on-click-right= "wallpaper-picker"; 
-        tooltip= "false";
     };
     "custom/notification" = {
         tooltip = false;

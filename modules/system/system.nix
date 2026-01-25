@@ -1,4 +1,4 @@
-{ pkgs, inputs, ...}: 
+{inputs, ...}: 
 {
   nix = {
     settings = {
@@ -25,7 +25,9 @@
       allowBroken = true;
       allowUnfree = true;
     };
-    overlays = [ inputs.nur.overlays.default ];
+    overlays = [
+      inputs.nur.overlays.default
+    ];
   };
 
   time.timeZone = "America/New_York";

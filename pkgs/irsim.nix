@@ -6,7 +6,7 @@ stdenv.mkDerivation rec {
   src = fetchFromGitHub {
     owner = "RTimothyEdwards";
     repo = "irsim";
-    tag = "${version}";
+    rev = "${version}";
     sha256 = "sha256-XtmSxZfMknx13KXVo5pHPGIOUWU0x3AH608+6qVYqlQ=";
   };
 

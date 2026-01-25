@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    nixpkgs-ocaml-4-13.url = "github:NixOS/nixpkgs/34bfa9403e42eece93d1a3740e9d8a02fceafbca";
     nur.url = "github:nix-community/NUR";
 
     hypr-contrib.url = "github:hyprwm/contrib";
@@ -44,7 +43,7 @@
     };
   };
 
-  outputs = { nixpkgs, nixpkgs-ocaml-4-13, self, probe-rs-rules, ...} @ inputs:
+  outputs = { nixpkgs, self, probe-rs-rules, ...} @ inputs:
   let
     system = "x86_64-linux";
     username = "dezash";

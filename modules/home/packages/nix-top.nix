@@ -1,4 +1,4 @@
-{ pkgs, system, inputs, ... }: 
+{ pkgs, inputs, ... }: 
 {
   home.packages = with pkgs; [
     discord
@@ -46,12 +46,11 @@
     xdg-utils
     xxd
 
-    # VLSI
-    magic-vlsi
     # xyce
     yosys
-    irsim
-    actflow
+    # irsim
+    # actflow
+    verible
 
     vscode
     zed-editor

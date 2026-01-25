@@ -682,22 +682,6 @@
         "type": "github"
       }
     },
-    "nixpkgs-ocaml-4-13": {
-      "locked": {
-        "lastModified": 1658083977,
-        "narHash": "sha256-yqLXI+viN5+Vx5YpG9gNapKL3/+P6Pkprc36xNdyqSU=",
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "34bfa9403e42eece93d1a3740e9d8a02fceafbca",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "rev": "34bfa9403e42eece93d1a3740e9d8a02fceafbca",
-        "type": "github"
-      }
-    },
     "nixpkgs_2": {
       "locked": {
         "lastModified": 1766070988,
@@ -887,7 +871,6 @@
         "hyprpicker": "hyprpicker",
         "nix-gaming": "nix-gaming",
         "nixpkgs": "nixpkgs_5",
-        "nixpkgs-ocaml-4-13": "nixpkgs-ocaml-4-13",
         "nixvim": "nixvim",
         "nur": "nur",
         "probe-rs-rules": "probe-rs-rules",

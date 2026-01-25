@@ -22,6 +22,7 @@
         ocamllsp.enable = true;
         postgres_lsp.enable = true;
         ruff.enable = true;
+        verible.enable = true;
         starlark_rust = {
           enable = true;
           settings = {
