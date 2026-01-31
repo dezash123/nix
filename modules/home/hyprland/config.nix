@@ -47,7 +47,7 @@
         border_size = 2;
         "col.active_border" = "rgb(fb1830) rgb(4020d4) 215deg";
         "col.inactive_border" = "0x00000000";
-        no_border_on_floating = false;
+        # no_border_on_floating = false;
 
       };
 
@@ -250,23 +250,23 @@
         # "center,mpv"
         # "tile,Aseprite"
         # "size 1200 725,mpv"
-        "float,title:^(float_kitty)$"
-        "center,title:^(float_kitty)$"
-        "size 950 600,title:^(float_kitty)$"
+        # "float,title:^(float_kitty)$"
+        # "center,title:^(float_kitty)$"
+        # "size 950 600,title:^(float_kitty)$"
         # "pin,wofi"
         # "float,wofi"
         # "noborder,wofi"
         # "float,udiskie"
-        "float,title:^(Transmission)$"
-        "float,title:^(Volume Control)$"
-        "float,title:^(Firefox — Sharing Indicator)$"
-        "move 0 0,title:^(Firefox — Sharing Indicator)$"
-        "size 700 450,title:^(Volume Control)$"
-        "move 40 55%,title:^(Volume Control)$"
-        "pin,title:^(openwhisper)$"
-        "float,class:^(.blueman-manager-wrapped)$"
-        "float,title:^(Firefox.*Popup)$"
-        "float,title:^(.*Firefox.*Dialog)$"
+        # "float,title:^(Transmission)$"
+        # "float,title:^(Volume Control)$"
+        # "float,title:^(Firefox — Sharing Indicator)$"
+        # "move 0 0,title:^(Firefox — Sharing Indicator)$"
+        # "size 700 450,title:^(Volume Control)$"
+        # "move 40 55%,title:^(Volume Control)$"
+        # "pin,title:^(openwhisper)$"
+        # "float,class:^(.blueman-manager-wrapped)$"
+        # "float,title:^(Firefox.*Popup)$"
+        # "float,title:^(.*Firefox.*Dialog)$"
       ];
 
       # windowrulev2
