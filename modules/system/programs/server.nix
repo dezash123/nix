@@ -6,5 +6,6 @@
       package = pkgs.ollama-cuda;
     };
     # open-webui.enable = true;
+    
   };
 }

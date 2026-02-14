@@ -24,6 +24,17 @@
     };
   };
 
+
+  virtualisation.docker = {
+     daemon.settings = {
+        runtimes = {
+          "nvidia" = {
+            path = "${pkgs.nvidia-container-toolkit}/bin/nvidia-container-runtime";
+          };
+        };
+      };
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   environment.systemPackages = with pkgs; [
