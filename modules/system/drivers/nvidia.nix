@@ -1,4 +1,7 @@
 { config, lib, pkgs, ... }:
+let
+  nvidiaPackage = pkgs.linuxPackages.nvidiaPackages.stable;
+in
 {
   nixpkgs.config.nvidia.acceptLicense = true;
 
@@ -24,29 +27,64 @@
     };
   };
 
+
+  virtualisation.docker = {
+     daemon.settings = {
+        runtimes = {
+          "nvidia" = {
+            path = "${pkgs.nvidia-container-toolkit}/bin/nvidia-container-runtime";
+          };
+        };
+      };
+  };
+
+  nixpkgs.config = {
+    cudaSupport = true;
+    cudaVersion = "12";
+  };
+
   services.xserver.videoDrivers = [ "nvidia" ];
 
   environment.systemPackages = with pkgs; [
-    cudaPackages.cudatoolkit
-    cudaPackages.cudnn
-    cudaPackages.libcublas
-    cudaPackages.libcufft
-    cudaPackages.libcurand
-    cudaPackages.libcusolver
-    cudaPackages.libcusparse
-    cudaPackages.cuda_nvcc
+    # cudaPackages.cudatoolkit
+    # cudaPackages.cudnn
+    # cudaPackages.libcublas
+    # cudaPackages.libcufft
+    # cudaPackages.libcurand
+    # cudaPackages.libcusolver
+    # cudaPackages.libcusparse
+    # cudaPackages.cuda_nvcc
+    # cudaPackages.cuda_cudart
+    # stdenv.cc.cc.lib 
+    ffmpeg
+    fmt.dev
     cudaPackages.cuda_cudart
-    stdenv.cc.cc.lib
+    cudatoolkit
+    nvidiaPackage
+    cudaPackages.cudnn
+    libGLU
+    libGL
+    libXi
+    libXmu
+    freeglut
+    libXext
+    libX11
+    libXv
+    libXrandr
+    zlib
+    ncurses
+    stdenv.cc
+    binutils
+    uv
   ];
 
-  # System-wide LD_LIBRARY_PATH for CUDA/PyTorch support
-  # Sets for login shells and desktop sessions
   environment.sessionVariables = {
-    LD_LIBRARY_PATH = "/run/opengl-driver/lib:${pkgs.stdenv.cc.cc.lib}/lib";
-  };
-
-  # Also set via /etc/set-environment for systemd services and non-login contexts
-  environment.variables = {
-    LD_LIBRARY_PATH = "/run/opengl-driver/lib:${pkgs.stdenv.cc.cc.lib}/lib";
+    LD_LIBRARY_PATH="${nvidiaPackage}/lib:$LD_LIBRARY_PATH";
+    CUDA_PATH="${pkgs.cudatoolkit}";
+    EXTRA_LDFLAGS="-L/lib -L${nvidiaPackage}/lib";
+    EXTRA_CCFLAGS="-I${pkgs.cudatoolkit}/include";
+    CPATH="${pkgs.cudatoolkit}/include";
+    CMAKE_PREFIX_PATH="${pkgs.fmt.dev}:$CMAKE_PREFIX_PATH";
+    PKG_CONFIG_PATH="${pkgs.fmt.dev}/lib/pkgconfig:$PKG_CONFIG_PATH";
   };
 }

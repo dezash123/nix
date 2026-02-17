@@ -1,7 +1,4 @@
-_: {
+{lib, pkgs, ...}: {
   programs.zsh = {
-    shellAliases = {
-      n = "nvim";
-    };
   };
 }
