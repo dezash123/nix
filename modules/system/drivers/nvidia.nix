@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  nvidiaPackage = pkgs.linuxPackages.nvidiaPackages.stable;
+  nvidiaPackage = config.hardware.nvidia.package;
 in
 {
   nixpkgs.config.nvidia.acceptLicense = true;
@@ -60,7 +60,6 @@ in
     fmt.dev
     cudaPackages.cuda_cudart
     cudatoolkit
-    nvidiaPackage
     cudaPackages.cudnn
     libGLU
     libGL
@@ -81,7 +80,7 @@ in
   environment.sessionVariables = {
     LD_LIBRARY_PATH="${nvidiaPackage}/lib:$LD_LIBRARY_PATH";
     CUDA_PATH="${pkgs.cudatoolkit}";
-    EXTRA_LDFLAGS="-L/lib -L${nvidiaPackage}/lib";
+    EXTRA_LDFLAGS="-L${nvidiaPackage}/lib";
     EXTRA_CCFLAGS="-I${pkgs.cudatoolkit}/include";
     CPATH="${pkgs.cudatoolkit}/include";
     CMAKE_PREFIX_PATH="${pkgs.fmt.dev}:$CMAKE_PREFIX_PATH";
