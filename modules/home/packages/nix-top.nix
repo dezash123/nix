@@ -27,7 +27,7 @@
     x2goclient
     zenity
     winetricks
-    wineWowPackages.wayland
+    wineWow64Packages.wayland
 
     bleachbit                         # cache cleaner
     ffmpeg
