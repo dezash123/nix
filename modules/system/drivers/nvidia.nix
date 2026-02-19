@@ -1,6 +1,6 @@
 { config, lib, pkgs, ... }:
 let
-  nvidiaPackage = config.hardware.nvidia.package;
+  nvidiaPackage = pkgs.linuxPackages.nvidiaPackages.beta;
 in
 {
   nixpkgs.config.nvidia.acceptLicense = true;
@@ -40,27 +40,26 @@ in
 
   nixpkgs.config = {
     cudaSupport = true;
-    cudaVersion = "12";
+    cudaVersion = "13";
   };
 
   services.xserver.videoDrivers = [ "nvidia" ];
 
   environment.systemPackages = with pkgs; [
-    # cudaPackages.cudatoolkit
-    # cudaPackages.cudnn
-    # cudaPackages.libcublas
-    # cudaPackages.libcufft
-    # cudaPackages.libcurand
-    # cudaPackages.libcusolver
-    # cudaPackages.libcusparse
-    # cudaPackages.cuda_nvcc
-    # cudaPackages.cuda_cudart
-    # stdenv.cc.cc.lib 
+    cudaPackages_13.cudatoolkit
+    cudaPackages_13.cudnn
+    cudaPackages_13.libcublas
+    cudaPackages_13.libcufft
+    cudaPackages_13.libcurand
+    cudaPackages_13.libcusolver
+    cudaPackages_13.libcusparse
+    cudaPackages_13.cuda_nvcc
+    cudaPackages_13.cuda_cudart
     ffmpeg
     fmt.dev
-    cudaPackages.cuda_cudart
+    cudaPackages_13.cuda_cudart
     cudatoolkit
-    cudaPackages.cudnn
+    cudaPackages_13.cudnn
     libGLU
     libGL
     libXi
@@ -78,7 +77,17 @@ in
   ];
 
   environment.sessionVariables = {
-    LD_LIBRARY_PATH="${nvidiaPackage}/lib:$LD_LIBRARY_PATH";
+    LD_LIBRARY_PATH = lib.makeLibraryPath [
+      nvidiaPackage
+      pkgs.cudaPackages_13.cuda_cudart
+      pkgs.cudaPackages_13.cudatoolkit
+      pkgs.cudaPackages_13.cudnn
+      pkgs.cudaPackages_13.libcublas
+      pkgs.cudaPackages_13.libcufft
+      pkgs.cudaPackages_13.libcurand
+      pkgs.cudaPackages_13.libcusolver
+      pkgs.cudaPackages_13.libcusparse
+    ] + ":$LD_LIBRARY_PATH";
     CUDA_PATH="${pkgs.cudatoolkit}";
     EXTRA_LDFLAGS="-L${nvidiaPackage}/lib";
     EXTRA_CCFLAGS="-I${pkgs.cudatoolkit}/include";
