@@ -6,6 +6,7 @@
     fstrim.enable = true;
     onedrive.enable = true;
     blueman.enable = true;
+    logind.settings.Login.HandlePowerKey="ignore";
+    timesyncd.enable = true;
   };
-  services.logind.settings.Login.HandlePowerKey="ignore";
 }

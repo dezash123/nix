@@ -149,7 +149,6 @@
         "SUPER, Escape, exec, swaylock"
         "SUPER SHIFT, Escape, exec, shutdown-script"
         "SUPER, P, pseudo,"
-        "SUPER, J, togglesplit,"
         "SUPER, E, exec, nautilus"
         "SUPER SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped"
         "SUPER, C ,exec, hyprpicker -a"
