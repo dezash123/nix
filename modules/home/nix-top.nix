@@ -7,7 +7,7 @@
     ./kitty.nix
     ./neovide.nix
     ./swaync
-    ./swaylock.nix
+    # ./swaylock.nix
     ./waybar
     # ./zen.nix
   ];

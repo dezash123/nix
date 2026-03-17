@@ -146,7 +146,7 @@
         "SUPER, D, exec, fuzzel"
         "SUPER SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'"
         "SUPER SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        "SUPER, Escape, exec, swaylock"
+        # "SUPER, Escape, exec, swaylock"
         "SUPER SHIFT, Escape, exec, shutdown-script"
         "SUPER, P, pseudo,"
         "SUPER, E, exec, nautilus"
@@ -229,7 +229,7 @@
       ];
 
       bindl = [
-        ",switch:on:Lid Switch, exec, swaylock"
+        # ",switch:on:Lid Switch, exec, swaylock"
       ];
 
       # mouse binding

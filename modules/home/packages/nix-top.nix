@@ -6,9 +6,9 @@
     inputs.zen-browser.packages.x86_64-linux.twilight
     gifsicle                          # gif utility
     gimp
+    google-chrome
     gtkwave
     kicad
-    # python312Packages.kicad
     libreoffice
     nautilus     # file manager
     obsidian
@@ -52,6 +52,7 @@
     # actflow
     verible
 
+    vlc
     vscode
     zed-editor
 
