@@ -1,9 +1,8 @@
-{ pkgs, inputs, ... }: 
+{ pkgs, ... }: 
 {
   home.packages = with pkgs; [
     discord
     firefox
-    inputs.zen-browser.packages.x86_64-linux.twilight
     gifsicle                          # gif utility
     gimp
     google-chrome

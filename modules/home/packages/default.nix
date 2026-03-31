@@ -2,6 +2,7 @@
   imports = if (host == "nix-top") then [./nix-top.nix] else [./server.nix];
   home.packages = with pkgs; [
     bitwise                           # cli tool for bit / hex manipulation
+    bubblewrap
     cargo-generate
     claude-code
     codex
