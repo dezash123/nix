@@ -4,7 +4,7 @@
     bitwise                           # cli tool for bit / hex manipulation
     bubblewrap
     cargo-generate
-    claude-code
+    # claude-code
     codex
     fd                                # find replacement
     file                              # Show file information 

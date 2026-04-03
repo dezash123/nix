@@ -23,18 +23,6 @@
         postgres_lsp.enable = true;
         ruff.enable = true;
         verible.enable = true;
-        starlark_rust = {
-          enable = true;
-          settings = {
-            cmd = [
-              "pcb"
-              "lsp"
-            ];
-            filetypes = [
-              "zen"
-            ];
-          };
-        };
         svelte.enable = true;
         tailwindcss.enable = true;
         yamlls.enable = true;

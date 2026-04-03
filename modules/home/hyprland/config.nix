@@ -164,6 +164,10 @@
         "SUPER, right, movefocus, r"
         "SUPER, up, movefocus, u"
         "SUPER, down, movefocus, d"
+        "SUPER, h, movefocus, l"
+        "SUPER, l, movefocus, r"
+        "SUPER, k, movefocus, u"
+        "SUPER, j, movefocus, d"
 
         # switch workspace
         "SUPER, 1, workspace, 1"
@@ -195,14 +199,26 @@
         "SUPER SHIFT, right, movewindow, r"
         "SUPER SHIFT, up, movewindow, u"
         "SUPER SHIFT, down, movewindow, d"
+        "SUPER SHIFT, h, movewindow, l"
+        "SUPER SHIFT, l, movewindow, r"
+        "SUPER SHIFT, k, movewindow, u"
+        "SUPER SHIFT, j, movewindow, d"
         "SUPER CTRL, left, resizeactive, -80 0"
         "SUPER CTRL, right, resizeactive, 80 0"
         "SUPER CTRL, up, resizeactive, 0 -80"
         "SUPER CTRL, down, resizeactive, 0 80"
+        "SUPER CTRL, h, resizeactive, -80 0"
+        "SUPER CTRL, l, resizeactive, 80 0"
+        "SUPER CTRL, k, resizeactive, 0 -80"
+        "SUPER CTRL, j, resizeactive, 0 80"
         "SUPER ALT, left, moveactive,  -80 0"
         "SUPER ALT, right, moveactive, 80 0"
         "SUPER ALT, up, moveactive, 0 -80"
         "SUPER ALT, down, moveactive, 0 80"
+        "SUPER ALT, h, moveactive,  -80 0"
+        "SUPER ALT, l, moveactive, 80 0"
+        "SUPER ALT, k, moveactive, 0 -80"
+        "SUPER ALT, j, moveactive, 0 80"
 
         # media and volume controls
         ",XF86AudioRaiseVolume,exec, pamixer -i 2"
@@ -305,7 +321,7 @@
 
     extraConfig = "
 monitor=eDP-1,2880x1920@120,auto,2
-monitor=DP-3,3440x1440@100,auto,1
+monitor=DP-4,3840x2160@60,auto,1.5
 monitor=,preferred,auto,1
 
 xwayland {

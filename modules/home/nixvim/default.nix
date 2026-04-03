@@ -11,6 +11,7 @@
     ./options.nix
     ./utils.nix
     ./ui.nix
+    ./zen.nix
     ./utils
   ];
   programs.nixvim = {
