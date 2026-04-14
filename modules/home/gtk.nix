@@ -12,6 +12,7 @@
 
   gtk = {
     enable = true;
+    gtk4.theme = config.gtk.theme;
     font = {
       name = "Noto Sans";
       size = 11;

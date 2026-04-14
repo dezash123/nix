@@ -1,4 +1,3 @@
-{ pkgs, ... }:
 {
   programs.nixvim.plugins = {
     lsp = {
@@ -14,7 +13,7 @@
         gopls.enable = true;
         html.enable = true;
         htmx.enable = true;
-        jsonls.enable = true;
+        # jsonls.enable = true;
         kotlin_language_server.enable = true;
         lua_ls.enable = true;
         markdown_oxide.enable = true;

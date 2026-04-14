@@ -36,6 +36,7 @@
     };
 
     probe-rs-rules.url = "github:jneem/probe-rs-rules";
+    pcb.url = "github:diodeinc/pcb/v0.3.53";
   };
 
   outputs = { nixpkgs, self, probe-rs-rules, ...} @ inputs:
@@ -59,7 +60,7 @@
         inherit system;
         modules = [
           (import ./modules/hosts/nix-top/config.nix)
-          probe-rs-rules.nixosModules.${pkgs.system}.default
+          probe-rs-rules.nixosModules.${pkgs.stdenv.hostPlatform.system}.default
         ];
         specialArgs = { host="nix-top"; inherit self inputs username ; };
       };

@@ -1,4 +1,4 @@
-{ pkgs, ... }: 
+{ pkgs, inputs, ... }: 
 {
   home.packages = with pkgs; [
     discord
@@ -46,6 +46,7 @@
     xxd
 
     # xyce
+    # inputs.pcb.packages.${pkgs.system}.default
     yosys
     # irsim
     # actflow
@@ -56,5 +57,6 @@
     zed-editor
 
     tigervnc
+    zotero
   ];
 }

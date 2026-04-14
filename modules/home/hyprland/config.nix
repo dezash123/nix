@@ -321,7 +321,7 @@
 
     extraConfig = "
 monitor=eDP-1,2880x1920@120,auto,2
-monitor=DP-4,3840x2160@60,auto,1.5
+monitor=DP-2,3840x2160@60,auto,1.5
 monitor=,preferred,auto,1
 
 xwayland {
