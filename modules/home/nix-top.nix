@@ -5,8 +5,8 @@
     ./gtk.nix
     ./hyprland
     ./kitty.nix
+    ./mako.nix
     ./neovide.nix
-    ./swaync
     # ./swaylock.nix
     ./waybar
     # ./zen.nix

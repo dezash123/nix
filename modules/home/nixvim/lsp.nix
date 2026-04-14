@@ -12,8 +12,54 @@
         golangci_lint_ls.enable = true;
         gopls.enable = true;
         html.enable = true;
-        htmx.enable = true;
-        # jsonls.enable = true;
+        htmx = {
+          enable = true;
+          filetypes = [
+            "aspnetcorerazor"
+            "astro"
+            "astro-markdown"
+            "blade"
+            "clojure"
+            "django-html"
+            "htmldjango"
+            "edge"
+            "eelixir"
+            "elixir"
+            "ejs"
+            "erb"
+            "eruby"
+            "gohtml"
+            "gohtmltmpl"
+            "haml"
+            "handlebars"
+            "hbs"
+            "html"
+            "htmlangular"
+            "html-eex"
+            "heex"
+            "jade"
+            "leaf"
+            "liquid"
+            "mdx"
+            "mustache"
+            "njk"
+            "nunjucks"
+            "php"
+            "razor"
+            "slim"
+            "twig"
+            "javascript"
+            "javascriptreact"
+            "reason"
+            "rescript"
+            "typescript"
+            "typescriptreact"
+            "vue"
+            "svelte"
+            "templ"
+          ];
+        };
+        jsonls.enable = true;
         kotlin_language_server.enable = true;
         lua_ls.enable = true;
         markdown_oxide.enable = true;

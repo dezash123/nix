@@ -13,7 +13,6 @@
         "hyprctl setcursor Nordzy-cursors 22 &"
         "poweralertd &"
         "waybar &"
-        "swaync &"
         "wl-paste --watch cliphist store"
       ];
 
@@ -316,6 +315,11 @@
         "no_blur on, match:class ^(xwaylandvideobridge)$"
 
         "fullscreen on, match:class ^(neovide)$"
+      ];
+
+      layerrule = [
+        "blur on, match:namespace notifications"
+        "ignore_alpha 0.2, match:namespace notifications"
       ];
     };
 
