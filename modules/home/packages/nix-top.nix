@@ -1,6 +1,7 @@
 { pkgs, inputs, ... }: 
 {
   home.packages = with pkgs; [
+    bambu-studio
     discord
     firefox
     gifsicle                          # gif utility

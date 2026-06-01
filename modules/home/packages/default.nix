@@ -5,7 +5,7 @@
     bubblewrap
     cargo-generate
     # claude-code
-    codex
+    # codex
     fd                                # find replacement
     file                              # Show file information 
     fzf                               # fuzzy finder

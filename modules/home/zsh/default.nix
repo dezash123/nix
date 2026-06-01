@@ -70,6 +70,7 @@
       avenv = "source .venv/bin/activate";
 
       gemini = "bunx @google/gemini-cli";
+      codex = "bunx @openai/codex";
     };
   };
 

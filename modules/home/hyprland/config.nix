@@ -64,7 +64,7 @@
         special_scale_factor = 1.0;
         split_width_multiplier = 1.0;
         use_active_for_splits = true;
-        pseudotile = "yes";
+        # pseudotile = "yes";
         preserve_split = "yes";
       };
 
@@ -325,7 +325,7 @@
 
     extraConfig = "
 monitor=eDP-1,2880x1920@120,auto,2
-monitor=DP-2,3840x2160@60,auto,1.5
+monitor=DP-2,1920x1080@120,auto,1
 monitor=,preferred,auto,1
 
 xwayland {
