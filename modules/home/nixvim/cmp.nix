@@ -1,9 +1,9 @@
-_:
-{
+_: {
   programs.nixvim.plugins = {
     luasnip.enable = true;
     cmp-buffer.enable = true;
     cmp-emoji.enable = true;
+    cmp-nvim-lua.enable = true;
     cmp-nvim-lsp.enable = true;
     cmp-path.enable = true;
     cmp_luasnip.enable = true;
@@ -11,7 +11,9 @@ _:
       enable = true;
 
       settings = {
-        experimental = { ghost_text = true; };
+        experimental = {
+          ghost_text = true;
+        };
         snippet.expand = ''
           function(args)
             require('luasnip').lsp_expand(args.body)
@@ -20,17 +22,21 @@ _:
         sources = [
           { name = "nvim_lsp"; }
           { name = "luasnip"; }
+          { name = "emoji"; }
           {
             name = "buffer";
             option.get_bufnrs.__raw = "vim.api.nvim_list_bufs";
           }
           { name = "nvim_lua"; }
           { name = "path"; }
-          { name = "copilot"; }
         ];
 
         formatting = {
-          fields = [ "abbr" "kind" "menu" ];
+          fields = [
+            "abbr"
+            "kind"
+            "menu"
+          ];
           format =
             # lua
             ''
@@ -87,17 +93,33 @@ _:
 
         window = {
           completion = {
-            winhighlight =
-              "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
+            winhighlight = "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
             scrollbar = false;
             sidePadding = 0;
-            border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
+            border = [
+              "╭"
+              "─"
+              "╮"
+              "│"
+              "╯"
+              "─"
+              "╰"
+              "│"
+            ];
           };
 
-          settings.documentation = {
-            border = [ "╭" "─" "╮" "│" "╯" "─" "╰" "│" ];
-            winhighlight =
-              "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
+          documentation = {
+            border = [
+              "╭"
+              "─"
+              "╮"
+              "│"
+              "╯"
+              "─"
+              "╰"
+              "│"
+            ];
+            winhighlight = "FloatBorder:CmpBorder,Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel";
           };
         };
 
@@ -112,7 +134,7 @@ _:
           "<S-Tab>" = "cmp.mapping.close()";
           "<CR>" = "cmp.mapping.confirm({ select = true })";
           "<Tab>" =
-            # lua 
+            # lua
             ''
               function(fallback)
                 fallback()

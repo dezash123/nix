@@ -1,5 +1,4 @@
-_:
-{ 
+_: {
   programs.nixvim.plugins.telescope = {
     enable = true;
     keymaps = {
@@ -11,6 +10,6 @@ _:
         };
       };
     };
-    extensions.fzf-native = { enable = true; };
+    extensions.fzf-native.enable = true;
   };
 }

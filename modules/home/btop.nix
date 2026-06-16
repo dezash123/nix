@@ -1,4 +1,5 @@
-{ host, pkgs, ... }: {
+{ host, pkgs, ... }:
+{
   programs.btop = {
     enable = true;
     settings = {
@@ -7,5 +8,5 @@
       update_ms = 500;
     };
     package = if (host == "nix-top") then pkgs.btop-rocm else pkgs.btop-cuda;
-  };  
+  };
 }

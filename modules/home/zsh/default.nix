@@ -1,5 +1,6 @@
-{ host, lib, ...}: {
-  imports = if (host == "nix-top") then [./nix-top.nix] else [./server.nix];
+{ host, lib, ... }:
+{
+  imports = lib.optionals (host == "nix-top") [ ./nix-top.nix ];
 
   programs.zsh = {
     enable = true;
@@ -8,7 +9,10 @@
     syntaxHighlighting.enable = true;
     oh-my-zsh = {
       enable = true;
-      plugins = [ "git" "fzf" ];
+      plugins = [
+        "git"
+        "fzf"
+      ];
     };
     initContent = lib.mkBefore ''
       export PATH="$HOME/.cargo/bin:$PATH"
@@ -27,8 +31,6 @@
       [[ ! -r '/home/dezash/.opam/opam-init/init.zsh' ]] || source '/home/dezash/.opam/opam-init/init.zsh' > /dev/null 2> /dev/null
     '';
     shellAliases = {
-      # record = "wf-recorder --audio=alsa_output.pci-0000_08_00.6.analog-stereo.monitor -f $HOME/Videos/$(date +'%Y%m%d%H%M%S_1.mp4')";
-
       # Utils
       c = "clear";
       cat = "bat";
@@ -48,21 +50,21 @@
       nix-clean = "sudo nix-collect-garbage && sudo nix-collect-garbage -d && sudo rm /nix/var/nix/gcroots/auto/* && nix-collect-garbage && nix-collect-garbage -d";
 
       # Git
-      ga   = "git add";
-      gaa  = "git add --all";
-      gs   = "git status";
-      gb   = "git branch";
-      gm   = "git merge";
-      gpl  = "git pull";
+      ga = "git add";
+      gaa = "git add --all";
+      gs = "git status";
+      gb = "git branch";
+      gm = "git merge";
+      gpl = "git pull";
       gplo = "git pull origin";
-      gps  = "git push";
+      gps = "git push";
       gpst = "git push --follow-tags";
       gpso = "git push origin";
-      gc   = "git commit";
-      gcm  = "git commit -m";
+      gc = "git commit";
+      gcm = "git commit -m";
       gacm = "git add . && git commit -m";
       gtag = "git tag -ma";
-      gch  = "git checkout";
+      gch = "git checkout";
       gchb = "git checkout -b";
 
       # python

@@ -1,5 +1,4 @@
-_:
-{
+_: {
   programs.fuzzel = {
     enable = true;
     settings = {
@@ -8,7 +7,7 @@ _:
         line-height = 25;
         fields = "name,generic,comment,categories,filename,keywords";
         terminal = "kitty";
-        prompt = "' ➜  '" ;
+        prompt = "➜ ";
         icon-theme = "Papirus-Dark";
         layer = "top";
         lines = 10;

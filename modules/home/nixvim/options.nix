@@ -23,7 +23,7 @@
     wildmode = "list:longest";
 
     swapfile = false;
-    undofile = true; # Build-in persistent undo
+    undofile = true; # Built-in persistent undo
 
     termguicolors = lib.mkForce pkgs.stdenv.isLinux;
   };

@@ -1,4 +1,16 @@
-{ stdenv, fetchFromGitHub, git, m4, boost, cmake, bison, libedit, llvm, zlib, numactl }:
+{
+  stdenv,
+  fetchFromGitHub,
+  git,
+  m4,
+  boost,
+  cmake,
+  bison,
+  libedit,
+  llvm,
+  zlib,
+  numactl,
+}:
 stdenv.mkDerivation {
   pname = "actflow";
   version = "1.0.0";
@@ -37,7 +49,7 @@ stdenv.mkDerivation {
     substituteInPlace TritonRoute-WXL/CMakeLists.txt --replace-quiet "cmake_minimum_required(VERSION 3.1)" "cmake_minimum_required(VERSION 3.5)"
 
     substituteInPlace PWRoute/CMakeLists.txt --replace-quiet "SET(Boost_USE_STATIC_LIBS ON)" "# SET(Boost_USE_STATIC_LIBS ON)"
-    '';
+  '';
 
   buildPhase = ''
     ./build

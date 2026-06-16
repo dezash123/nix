@@ -1,40 +1,111 @@
+let
+  directions = [
+    {
+      key = "left";
+      focus = "l";
+      resize = "-80 0";
+      move = "-80 0";
+    }
+    {
+      key = "right";
+      focus = "r";
+      resize = "80 0";
+      move = "80 0";
+    }
+    {
+      key = "up";
+      focus = "u";
+      resize = "0 -80";
+      move = "0 -80";
+    }
+    {
+      key = "down";
+      focus = "d";
+      resize = "0 80";
+      move = "0 80";
+    }
+    {
+      key = "h";
+      focus = "l";
+      resize = "-80 0";
+      move = "-80 0";
+    }
+    {
+      key = "l";
+      focus = "r";
+      resize = "80 0";
+      move = "80 0";
+    }
+    {
+      key = "k";
+      focus = "u";
+      resize = "0 -80";
+      move = "0 -80";
+    }
+    {
+      key = "j";
+      focus = "d";
+      resize = "0 80";
+      move = "0 80";
+    }
+  ];
+
+  workspaces = builtins.genList (
+    index:
+    let
+      workspace = index + 1;
+    in
+    {
+      key = if workspace == 10 then "0" else builtins.toString workspace;
+      name = builtins.toString workspace;
+    }
+  ) 10;
+
+  directionalBinds =
+    modifier: dispatcher: field:
+    builtins.map (
+      direction: "${modifier}, ${direction.key}, ${dispatcher}, ${direction.${field}}"
+    ) directions;
+
+  workspaceBinds = builtins.map (
+    workspace: "SUPER, ${workspace.key}, workspace, ${workspace.name}"
+  ) workspaces;
+
+  moveToWorkspaceBinds = builtins.map (
+    workspace: "SUPER SHIFT, ${workspace.key}, movetoworkspacesilent, ${workspace.name}"
+  ) workspaces;
+in
 {
   wayland.windowManager.hyprland = {
     settings = {
-      
       # autostart
       exec-once = [
-        "systemctl --user import-environment &"
-        "hash dbus-update-activation-environment 2>/dev/null &"
-        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
-        "nm-applet &"
+        "systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP"
+        "nm-applet"
         "wl-clip-persist --clipboard both"
-        "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
-        "hyprctl setcursor Nordzy-cursors 22 &"
-        "poweralertd &"
-        "waybar &"
+        "wall-change \"$(find $HOME/Pictures/wallpapers -maxdepth 1 -type f -print -quit)\""
+        "hyprctl setcursor Nordzy-cursors 22"
+        "poweralertd"
+        "waybar"
         "wl-paste --watch cliphist store"
       ];
 
       input = {
         kb_layout = "us";
-        kb_options ="grp:alt_caps_toggle"; 
+        kb_options = "grp:alt_caps_toggle";
         numlock_by_default = true;
         follow_mouse = 1;
         sensitivity = 0;
         touchpad = {
           natural_scroll = false;
-	        clickfinger_behavior = true;
+          clickfinger_behavior = true;
         };
       };
       gesture = [
         "3,horizontal,workspace,"
       ];
       gestures = {
-        # workspace_swipe_forever = true;
-        # workspace_swipe_direction_lock = false;
-        # workspace_swipe_distance = 225;
-
         workspace_swipe_invert = false;
       };
 
@@ -45,8 +116,6 @@
         border_size = 2;
         "col.active_border" = "rgb(fb1830) rgb(4020d4) 215deg";
         "col.inactive_border" = "0x00000000";
-        # no_border_on_floating = false;
-
       };
 
       misc = {
@@ -64,7 +133,6 @@
         special_scale_factor = 1.0;
         split_width_multiplier = 1.0;
         use_active_for_splits = true;
-        # pseudotile = "yes";
         preserve_split = "yes";
       };
 
@@ -80,8 +148,6 @@
           enabled = true;
           size = 1;
           passes = 1;
-          # size = 4;
-          # passes = 2;
           brightness = 1;
           contrast = 1.400;
           ignore_opacity = true;
@@ -89,14 +155,6 @@
           new_optimizations = true;
           xray = true;
         };
-
-        # drop_shadow = true;
-
-        # shadow_ignore_window = true;
-        # shadow_offset = "0 2";
-        # shadow_range = 20;
-        # shadow_render_power = 3;
-        # "col.shadow" = "rgba(00000055)";
       };
 
       animations = {
@@ -145,80 +203,28 @@
         "SUPER, D, exec, fuzzel"
         "SUPER SHIFT, D, exec, hyprctl dispatch exec '[workspace 4 silent] discord --enable-features=UseOzonePlatform --ozone-platform=wayland'"
         "SUPER SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        # "SUPER, Escape, exec, swaylock"
         "SUPER SHIFT, Escape, exec, shutdown-script"
         "SUPER, P, pseudo,"
         "SUPER, E, exec, nautilus"
         "SUPER SHIFT, B, exec, pkill -SIGUSR1 .waybar-wrapped"
-        "SUPER, C ,exec, hyprpicker -a"
-        "SUPER, W,exec, wallpaper-picker"
+        "SUPER, C, exec, hyprpicker -a"
+        "SUPER, W, exec, wallpaper-picker"
         "SUPER SHIFT, W, exec, vm-start"
 
         # screenshot
         "SUPER, Print, exec, grimblast --notify --freeze save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
         ",Print, exec, grimblast --notify --freeze copy area"
 
-        # switch focus
-        "SUPER, left, movefocus, l"
-        "SUPER, right, movefocus, r"
-        "SUPER, up, movefocus, u"
-        "SUPER, down, movefocus, d"
-        "SUPER, h, movefocus, l"
-        "SUPER, l, movefocus, r"
-        "SUPER, k, movefocus, u"
-        "SUPER, j, movefocus, d"
-
-        # switch workspace
-        "SUPER, 1, workspace, 1"
-        "SUPER, 2, workspace, 2"
-        "SUPER, 3, workspace, 3"
-        "SUPER, 4, workspace, 4"
-        "SUPER, 5, workspace, 5"
-        "SUPER, 6, workspace, 6"
-        "SUPER, 7, workspace, 7"
-        "SUPER, 8, workspace, 8"
-        "SUPER, 9, workspace, 9"
-        "SUPER, 0, workspace, 10"
-
-        # same as above, but switch to the workspace
-        "SUPER SHIFT, 1, movetoworkspacesilent, 1" # movetoworkspacesilent
-        "SUPER SHIFT, 2, movetoworkspacesilent, 2"
-        "SUPER SHIFT, 3, movetoworkspacesilent, 3"
-        "SUPER SHIFT, 4, movetoworkspacesilent, 4"
-        "SUPER SHIFT, 5, movetoworkspacesilent, 5"
-        "SUPER SHIFT, 6, movetoworkspacesilent, 6"
-        "SUPER SHIFT, 7, movetoworkspacesilent, 7"
-        "SUPER SHIFT, 8, movetoworkspacesilent, 8"
-        "SUPER SHIFT, 9, movetoworkspacesilent, 9"
-        "SUPER SHIFT, 0, movetoworkspacesilent, 10"
         "SUPER CTRL, c, movetoworkspace, empty"
 
-        # window control
-        "SUPER SHIFT, left, movewindow, l"
-        "SUPER SHIFT, right, movewindow, r"
-        "SUPER SHIFT, up, movewindow, u"
-        "SUPER SHIFT, down, movewindow, d"
-        "SUPER SHIFT, h, movewindow, l"
-        "SUPER SHIFT, l, movewindow, r"
-        "SUPER SHIFT, k, movewindow, u"
-        "SUPER SHIFT, j, movewindow, d"
-        "SUPER CTRL, left, resizeactive, -80 0"
-        "SUPER CTRL, right, resizeactive, 80 0"
-        "SUPER CTRL, up, resizeactive, 0 -80"
-        "SUPER CTRL, down, resizeactive, 0 80"
-        "SUPER CTRL, h, resizeactive, -80 0"
-        "SUPER CTRL, l, resizeactive, 80 0"
-        "SUPER CTRL, k, resizeactive, 0 -80"
-        "SUPER CTRL, j, resizeactive, 0 80"
-        "SUPER ALT, left, moveactive,  -80 0"
-        "SUPER ALT, right, moveactive, 80 0"
-        "SUPER ALT, up, moveactive, 0 -80"
-        "SUPER ALT, down, moveactive, 0 80"
-        "SUPER ALT, h, moveactive,  -80 0"
-        "SUPER ALT, l, moveactive, 80 0"
-        "SUPER ALT, k, moveactive, 0 -80"
-        "SUPER ALT, j, moveactive, 0 80"
-
+      ]
+      ++ directionalBinds "SUPER" "movefocus" "focus"
+      ++ workspaceBinds
+      ++ moveToWorkspaceBinds
+      ++ directionalBinds "SUPER SHIFT" "movewindow" "focus"
+      ++ directionalBinds "SUPER CTRL" "resizeactive" "resize"
+      ++ directionalBinds "SUPER ALT" "moveactive" "move"
+      ++ [
         # media and volume controls
         ",XF86AudioRaiseVolume,exec, pamixer -i 2"
         ",XF86AudioLowerVolume,exec, pamixer -d 2"
@@ -230,7 +236,7 @@
         "SUPER, mouse_down, workspace, e-1"
         "SUPER, mouse_up, workspace, e+1"
 
-        # laptop brigthness
+        # laptop brightness
         ",XF86MonBrightnessUp, exec, brightnessctl set 5%+"
         ",XF86MonBrightnessDown, exec, brightnessctl set 5%-"
         "SUPER, XF86MonBrightnessUp, exec, brightnessctl set 100%+"
@@ -239,12 +245,6 @@
         # clipboard manager
         "SUPER, V, exec, cliphist list | fuzzel --dmenu | cliphist decode | wl-copy"
 
-        # locking
-
-      ];
-
-      bindl = [
-        # ",switch:on:Lid Switch, exec, swaylock"
       ];
 
       # mouse binding
@@ -323,15 +323,15 @@
       ];
     };
 
-    extraConfig = "
-monitor=eDP-1,2880x1920@120,auto,2
-monitor=DP-2,1920x1080@120,auto,1
-monitor=,preferred,auto,1
+    extraConfig = ''
+      monitor=eDP-1,2880x1920@120,auto,2
+      monitor=DP-2,1920x1080@120,auto,1
+      monitor=,preferred,auto,1
 
-xwayland {
-  force_zero_scaling = true
-}
-env = GDK_SCALE,2
-    ";
+      xwayland {
+        force_zero_scaling = true
+      }
+      env = GDK_SCALE,2
+    '';
   };
 }

@@ -1,5 +1,7 @@
-{ options, host, ...}: {
-  imports = if host == "nix-top" then [./nix-top.nix] else [./server.nix];
+{ host, options, ... }:
+{
+  imports = [ (if host == "nix-top" then ./nix-top.nix else ./server.nix) ];
+
   networking = {
     hostName = host;
     networkmanager.enable = true;

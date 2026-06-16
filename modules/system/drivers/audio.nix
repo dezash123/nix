@@ -1,6 +1,5 @@
-{ pkgs, ... }: 
+{ pkgs, ... }:
 {
-  security.rtkit.enable = true;
   services = {
     pulseaudio.enable = false;
     pipewire = {
@@ -10,7 +9,6 @@
         support32Bit = true;
       };
       pulse.enable = true;
-      # lowLatency.enable = true;
     };
   };
 

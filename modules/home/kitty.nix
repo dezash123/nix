@@ -3,7 +3,7 @@
     enable = true;
 
     themeFile = "Catppuccin-Mocha";
-    
+
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 12;
@@ -11,12 +11,12 @@
 
     settings = {
       confirm_os_window_close = 0;
-      background_opacity = "0.8";  
+      background_opacity = "0.8";
       window_padding_width = 2;
       scrollback_lines = 10000;
       enable_audio_bell = false;
       mouse_hide_wait = 60;
-      
+
       ## Tabs
       tab_title_template = "{index}";
       active_tab_font_style = "normal";
@@ -32,7 +32,7 @@
       cursor_trail_decay = "0.1 0.4";
     };
 
-    keybindings = {  
+    keybindings = {
       ## Tabs
       "alt+1" = "goto_tab 1";
       "alt+2" = "goto_tab 2";

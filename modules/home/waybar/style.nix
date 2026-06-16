@@ -1,15 +1,13 @@
 _:
-let custom = {
+let
+  custom = {
     font = "JetBrainsMono Nerd Font";
-    font_size = "15px";
-    font_weight = "bold";
-    text_color = "#cdd6f4";
-    secondary_accent= "89b4fa";
-    tertiary_accent = "f5f5f5";
-    background = "11111B";
+    fontSize = "15px";
+    fontWeight = "bold";
+    textColor = "#cdd6f4";
     opacity = "0.98";
-};
-in 
+  };
+in
 {
   programs.waybar.style = ''
 
@@ -20,7 +18,7 @@ in
         margin: 0;
         min-height: 0px;
         font-family: ${custom.font};
-        font-weight: ${custom.font_weight};
+        font-weight: ${custom.fontWeight};
         opacity: ${custom.opacity};
     }
 
@@ -34,7 +32,7 @@ in
         
     }
     #workspaces button {
-        color: ${custom.text_color};
+        color: ${custom.textColor};
         padding-left:  6px;
         padding-right: 6px;
     }
@@ -45,9 +43,9 @@ in
         color: #b4befe;
     }
 
-    #tray, #pulseaudio, #network, #cpu, #memory, #disk, #clock, #battery {
-        font-size: ${custom.font_size};
-        color: ${custom.text_color};
+    #tray, #pulseaudio, #network, #cpu, #memory, #clock, #battery {
+        font-size: ${custom.fontSize};
+        color: ${custom.textColor};
     }
 
     #cpu {
@@ -59,11 +57,6 @@ in
         padding-left: 9px;
         padding-right: 9px;
     }
-    #disk {
-        padding-left: 9px;
-        padding-right: 15px;
-    }
-
     #tray {
         padding: 0 20px;
         margin-left: 7px;
@@ -91,7 +84,7 @@ in
     #custom-launcher {
         font-size: 20px;
         color: #b4befe;
-        font-weight: ${custom.font_weight};
+        font-weight: ${custom.fontWeight};
         padding-left: 10px;
         padding-right: 15px;
     }

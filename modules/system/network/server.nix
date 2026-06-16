@@ -16,7 +16,14 @@
     tailscale.useRoutingFeatures = "server";
   };
   networking.firewall = {
-    allowedTCPPorts = [ 22 8080 11434 3000 8000 443 ];
+    allowedTCPPorts = [
+      22
+      8080
+      11434
+      3000
+      8000
+      443
+    ];
     trustedInterfaces = [ "tailscale0" ];
   };
 }

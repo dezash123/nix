@@ -1,9 +1,12 @@
-{inputs, ...}: 
+{ inputs, ... }:
 {
   nix = {
     settings = {
       auto-optimise-store = true;
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       substituters = [ "https://nix-gaming.cachix.org" ];
       trusted-public-keys = [ "nix-gaming.cachix.org-1:nbjlureqMbRAxR1gJ/f3hxemL9svXaZF/Ees8vCUUs4=" ];
     };
@@ -13,7 +16,7 @@
       options = "--delete-older-than 7d";
     };
   };
-  
+
   nixpkgs = {
     config = {
       permittedInsecurePackages = [
@@ -22,7 +25,6 @@
         "tightvnc-1.3.10"
         "libsoup-2.74.3"
       ];
-      allowBroken = true;
       allowUnfree = true;
     };
     overlays = [
@@ -31,8 +33,8 @@
   };
 
   time.timeZone = "America/New_York";
-  
+
   i18n.defaultLocale = "en_US.UTF-8";
-  
+
   system.stateVersion = "24.11";
 }

@@ -1,4 +1,11 @@
-{ stdenv, fetchFromGitHub, git, m4, tcl, tk }:
+{
+  stdenv,
+  fetchFromGitHub,
+  git,
+  m4,
+  tcl,
+  tk,
+}:
 stdenv.mkDerivation rec {
   pname = "irsim";
   version = "9.7.119";

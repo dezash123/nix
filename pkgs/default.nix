@@ -1,3 +1,4 @@
-final: prev: {
-  actflow = final.callPackage ./actflow.nix {};
+final: _prev: {
+  actflow = final.callPackage ./actflow.nix { };
+  irsim = final.callPackage ./irsim.nix { };
 }

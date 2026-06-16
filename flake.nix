@@ -39,41 +39,54 @@
     pcb.url = "github:diodeinc/pcb/v0.3.53";
   };
 
-  outputs = { nixpkgs, self, probe-rs-rules, ...} @ inputs:
-  let
-    system = "x86_64-linux";
-    username = "dezash";
+  outputs =
+    {
+      nixpkgs,
+      self,
+      probe-rs-rules,
+      ...
+    }@inputs:
+    let
+      system = "x86_64-linux";
+      username = "dezash";
 
-    pkgs = import nixpkgs {
-      inherit system;
-      config.allowUnfree = true;
-      config.allowBroken = true;
-    };
-  in
-  {
-    packages.${system} = {
-      inherit (pkgs) irsim actflow;
-    };
-
-    nixosConfigurations = {
-      nix-top = nixpkgs.lib.nixosSystem {
+      pkgs = import nixpkgs {
         inherit system;
-        modules = [
-          (import ./modules/hosts/nix-top/config.nix)
+        config.allowUnfree = true;
+        overlays = [ self.overlays.default ];
+      };
+
+      mkHost =
+        host: extraModules:
+        nixpkgs.lib.nixosSystem {
+          inherit system;
+          modules = [
+            (import ./modules/hosts/${host}/config.nix)
+          ]
+          ++ extraModules;
+          specialArgs = {
+            inherit
+              host
+              self
+              inputs
+              username
+              ;
+          };
+        };
+    in
+    {
+      overlays.default = import ./pkgs;
+
+      packages.${system} = {
+        inherit (pkgs) irsim actflow;
+      };
+
+      nixosConfigurations = {
+        nix-top = mkHost "nix-top" [
           probe-rs-rules.nixosModules.${pkgs.stdenv.hostPlatform.system}.default
         ];
-        specialArgs = { host="nix-top"; inherit self inputs username ; };
-      };
-      bigserv = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ (import ./modules/hosts/bigserv/config.nix) ];
-        specialArgs = { host="bigserv"; inherit self inputs username ; };
-      };
-      lilserv = nixpkgs.lib.nixosSystem {
-        inherit system;
-        modules = [ (import ./modules/hosts/lilserv/config.nix) ];
-        specialArgs = { host="lilserv"; inherit self inputs username ; };
+        bigserv = mkHost "bigserv" [ ];
+        lilserv = mkHost "lilserv" [ ];
       };
     };
-  };
 }

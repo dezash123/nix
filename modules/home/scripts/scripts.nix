@@ -1,34 +1,85 @@
-{pkgs, ...}: let
-  wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./scripts/wall-change.sh);
-  wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" (builtins.readFile ./scripts/wallpaper-picker.sh);
-  
-  runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
-  music = pkgs.writeShellScriptBin "music" (builtins.readFile ./scripts/music.sh);
-  
-  toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ./scripts/toggle_blur.sh);
-  toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (builtins.readFile ./scripts/toggle_oppacity.sh);
-  
-  shutdown-script = pkgs.writeScriptBin "shutdown-script" (builtins.readFile ./scripts/shutdown-script.sh);
-  
-  show-keybinds = pkgs.writeScriptBin "show-keybinds" (builtins.readFile ./scripts/keybinds.sh);
-  
-  vm-start = pkgs.writeScriptBin "vm-start" (builtins.readFile ./scripts/vm-start.sh);
+{ pkgs, ... }:
+let
+  mkScriptFrom =
+    name: file: runtimeInputs:
+    pkgs.writeShellApplication {
+      inherit name runtimeInputs;
+      text = builtins.readFile ./scripts/${file}.sh;
+    };
+  mkScript = name: mkScriptFrom name name;
 
-  record = pkgs.writeScriptBin "record" (builtins.readFile ./scripts/record.sh);
-in {
-  home.packages = with pkgs; [
+  extract = mkScript "extract" [
+    pkgs.coreutils
+    pkgs.gnutar
+  ];
+  music = mkScript "music" [
+    pkgs.audacious
+    pkgs.gnugrep
+    pkgs.hyprland
+    pkgs.procps
+  ];
+  record = mkScript "record" [
+    pkgs.coreutils
+    pkgs.ffmpeg
+    pkgs.gifsicle
+    pkgs.libnotify
+    pkgs.procps
+    pkgs.slurp
+    pkgs.wf-recorder
+    pkgs.wl-clipboard
+    pkgs.zenity
+  ];
+  runbg = mkScript "runbg" [ pkgs.coreutils ];
+  shutdown-script = mkScript "shutdown-script" [
+    pkgs.fuzzel
+    pkgs.libnotify
+    pkgs.systemd
+  ];
+  show-keybinds = mkScriptFrom "show-keybinds" "keybinds" [
+    pkgs.fuzzel
+    pkgs.gnugrep
+    pkgs.gnused
+  ];
+  toggle_blur = mkScript "toggle_blur" [
+    pkgs.gnugrep
+    pkgs.hyprland
+  ];
+  toggle_opacity = mkScriptFrom "toggle_opacity" "toggle_oppacity" [
+    pkgs.gnugrep
+    pkgs.hyprland
+  ];
+  vm-start = mkScript "vm-start" [
+    pkgs.gnugrep
+    pkgs.hyprland
+    pkgs.libvirt
+    pkgs.virt-viewer
+  ];
+  wall-change = mkScript "wall-change" [
+    pkgs.coreutils
+    pkgs.procps
+    pkgs.swaybg
+  ];
+  wallpaper-picker = mkScript "wallpaper-picker" [
+    pkgs.coreutils
+    pkgs.findutils
+    pkgs.fuzzel
+    wall-change
+  ];
+in
+{
+  home.packages = [
+    extract
+    show-keybinds
     wall-change
     wallpaper-picker
-    
+
     runbg
     music
-  
+
     toggle_blur
-    toggle_oppacity
+    toggle_opacity
 
     shutdown-script
-    
-    show-keybinds
 
     vm-start
 

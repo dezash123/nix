@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [ fastfetch ];
-  
+
   xdg.configFile."fastfetch/config.jsonc".text = ''
     {
       "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
@@ -16,15 +16,15 @@
       "display": {
         "separator": "",
         "size": {
-            "binaryPrefix": "si",
+          "binaryPrefix": "si",
           "ndigits": 0
         },
         "percent": {
           "type": 1
         },
-        "key":{
-         "Width": 1
-         },
+        "key": {
+          "width": 1
+        }
       },
       "modules": [
         {
@@ -71,48 +71,6 @@
           "key": "╰─󰔚 ",
           "keyColor": "32"
         },
-        "break",
-       /* {
-          "type": "cpu",
-          "key": "╭─ ",
-          "keyColor": "34",
-          "freqNdigits": 1
-        },
-        {
-          "type": "gpu",
-          "key": "├─󰢮 ",
-          "format": "{1} {2} ({3})",
-          "keyColor": "34"
-        },
-        {
-          "type": "sound",
-          "key": "├─󰓃 ",
-          "format": "{2}",
-          "keyColor": "34"
-        },
-        {
-          "type": "battery",
-          "key": "├─󰁹 ",
-          "keyColor": "34"
-        },
-        {
-          "type": "memory",
-          "key": "├─ ",
-          "keyColor": "34"
-        },
-        {
-          "type": "disk",
-          "key": "├─󰋊 ",
-          "keyColor": "34"
-        },
-        {
-          "type": "localip",
-          "key": "╰─󱦂 ",
-          "keyColor": "34",
-          "showIpv4": true,
-          "compact": true
-        },
-        "break", */
         {
           "type": "display",
           "key": "╭─󰹑 ",

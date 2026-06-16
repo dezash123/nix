@@ -1,6 +1,5 @@
 {
   programs.nixvim.plugins = {
-
     # notifications
     fidget = {
       enable = true;
@@ -11,7 +10,6 @@
       };
     };
 
-    #
     treesitter = {
       enable = true;
       nixGrammars = true;
@@ -21,16 +19,16 @@
       };
     };
 
-    #
     treesitter-context = {
       enable = true;
-      settings = { max_lines = 2; };
+      settings = {
+        max_lines = 2;
+      };
     };
 
     # ([{}]) highlighting
     rainbow-delimiters.enable = true;
 
-    #
     nvim-tree = {
       enable = true;
       openOnSetupFile = true;
@@ -44,7 +42,7 @@
         colorscheme = "material";
       };
     };
-    
+
     gitsigns = {
       enable = true;
       settings = {

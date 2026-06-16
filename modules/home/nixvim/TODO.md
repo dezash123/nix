@@ -1,2 +1,2 @@
-- [ ] fix `indent-blankline` indentation/highlighting
-- [ ] fix `toggleterm` theme (?)
+- [x] fix `indent-blankline` indentation/highlighting
+- [x] fix `toggleterm` theme

@@ -1,5 +1,4 @@
-_:
-{
+_: {
   programs.nixvim = {
     globals.mapleader = " ";
     keymaps = [
@@ -19,46 +18,6 @@ _:
         action = "<CMD>TSContextToggle<CR>";
         options.desc = "Toggle Treesitter context";
       }
-      {
-        key = "<leader>ct";
-        action = "<CMD>CopilotChatToggle<CR>";
-        options.desc = "Toggle Copilot Chat Window";
-      }
-      {
-        key = "<leader>cf";
-        action = "<CMD>CopilotChatFix<CR>";
-        options.desc = "Fix the selected code";
-      }
-      {
-        key = "<leader>cs";
-        action = "<CMD>CopilotChatStop<CR>";
-        options.desc = "Stop current Copilot output";
-      }
-      {
-        key = "<leader>cr";
-        action = "<CMD>CopilotChatReview<CR>";
-        options.desc = "Review the selected code";
-      }
-      {
-        key = "<leader>ce";
-        action = "<CMD>CopilotChatExplain<CR>";
-        options.desc = "Give an explanation for the selected code";
-      }
-      {
-        key = "<leader>cd";
-        action = "<CMD>CopilotChatDocs<CR>";
-        options.desc = "Add documentation for the selection";
-      }
-      {
-        key = "<leader>cp";
-        action = "<CMD>CopilotChatTests<CR>";
-        options.desc = "Add tests for my code";
-      }
-      {
-        key = "<leader>cl";
-        action = "<CMD>ClaudeCode<CR>";
-        options.desc = "Run ClaudeCode";
-      }
 
       # File
       {
@@ -73,7 +32,7 @@ _:
         options.desc = "Format the current buffer";
       }
 
-      # Git    
+      # Git
       {
         mode = "n";
         key = "<leader>g";
@@ -91,7 +50,7 @@ _:
       }
       {
         key = "<leader>gtd";
-        action = "<CMD>Gitsigns toggle_deleted";
+        action = "<CMD>Gitsigns toggle_deleted<CR>";
         options.desc = "Gitsigns deleted";
       }
       {
@@ -155,7 +114,7 @@ _:
         options.desc = "Escape terminal mode";
       }
 
-      # Trouble 
+      # Trouble
       {
         mode = "n";
         key = "<leader>d";

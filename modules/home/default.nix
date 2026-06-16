@@ -1,4 +1,5 @@
-{ host, ... }: {
+{ host, lib, ... }:
+{
   imports = [
     ./bat.nix
     ./btop.nix
@@ -9,9 +10,8 @@
     ./git.nix
     ./nixvim
     ./zsh
-  ] ++ (if ( host == "nix-top" ) then [
-      ./nix-top.nix
-  ] else [
-      ./server.nix
-  ]);
+  ]
+  ++ lib.optionals (host == "nix-top") [
+    ./nix-top.nix
+  ];
 }

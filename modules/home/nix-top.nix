@@ -1,4 +1,4 @@
-{ 
+{
   imports = [
     ./default-apps.nix
     ./fuzzel.nix
@@ -7,8 +7,6 @@
     ./kitty.nix
     ./mako.nix
     ./neovide.nix
-    # ./swaylock.nix
     ./waybar
-    # ./zen.nix
   ];
 }

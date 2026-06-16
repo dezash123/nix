@@ -1,15 +1,15 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
-respond="$(echo " Shutdown\n Restart\n Cancel" | fuzzel --dmenu --lines=3 --width=10 --prompt='')"
+respond="$(printf "Shutdown\nRestart\nCancel\n" | fuzzel --dmenu --lines=3 --width=10 --prompt='' || true)"
 
-if [ $respond = ' Shutdown' ] 
-then
-    echo "shutdown"
-	shutdown now    
-elif [ $respond = ' Restart' ] 
-then
-    echo "restart"
-    reboot
-else
-    notify-send "cancel shutdown"
-fi
+case "$respond" in
+  Shutdown)
+    systemctl poweroff
+    ;;
+  Restart)
+    systemctl reboot
+    ;;
+  *)
+    notify-send "Shutdown cancelled"
+    ;;
+esac

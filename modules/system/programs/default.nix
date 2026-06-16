@@ -1,6 +1,6 @@
-{ host, pkgs, ... }: 
+{ host, pkgs, ... }:
 {
-  imports = if host == "nix-top" then [./nix-top.nix] else [./server.nix];
+  imports = [ (if host == "nix-top" then ./nix-top.nix else ./server.nix) ];
 
   programs = {
     dconf.enable = true;
@@ -22,19 +22,23 @@
     tmux = {
       enable = true;
       clock24 = true;
-      plugins = with pkgs.tmuxPlugins; [ catppuccin weather cpu battery tmux-which-key ];
+      plugins = with pkgs.tmuxPlugins; [
+        catppuccin
+        weather
+        cpu
+        battery
+        tmux-which-key
+      ];
     };
 
     direnv = {
       enable = true;
-      enableZshIntegration = true; # see note on other shells below
+      enableZshIntegration = true;
       nix-direnv.enable = true;
     };
   };
 
-  virtualisation.docker = {
-    enable = true;
-  };
+  virtualisation.docker.enable = true;
 
   environment.systemPackages = with pkgs; [
     bun

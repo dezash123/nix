@@ -1,5 +1,5 @@
 {
-programs.neovide = {
+  programs.neovide = {
     enable = true;
     settings = {
       fork = false;
@@ -14,7 +14,7 @@ programs.neovide = {
       vsync = true;
       wsl = false;
       font = {
-        normal = ["FiraMono Nerd Font"];
+        normal = [ "FiraMono Nerd Font" ];
         size = 12;
       };
     };

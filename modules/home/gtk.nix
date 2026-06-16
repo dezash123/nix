@@ -1,14 +1,19 @@
-{ pkgs, lib, config, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   fonts.fontconfig.enable = true;
-  home.packages = with pkgs; [
-    # nerdfonts
-    # nerdfonts.
-    # nerdfonts.Noto
-    noto-fonts
-    twemoji-color-font
-    noto-fonts-color-emoji
-  ] ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
+  home.packages =
+    with pkgs;
+    [
+      noto-fonts
+      twemoji-color-font
+      noto-fonts-color-emoji
+    ]
+    ++ builtins.filter lib.attrsets.isDerivation (builtins.attrValues pkgs.nerd-fonts);
 
   gtk = {
     enable = true;
@@ -34,7 +39,7 @@
       size = 22;
     };
   };
-  
+
   home.pointerCursor = {
     name = "Nordzy-cursors";
     package = pkgs.nordzy-cursor-theme;

@@ -1,22 +1,24 @@
-{ pkgs, config, inputs, host, self, username, ... }: 
+{ config, pkgs, ... }:
 {
   imports = [
     ./hardware-configuration.nix
     ../../system
   ];
 
-  environment.systemPackages = with pkgs; [
-    acpi
-    brightnessctl
-    cpupower-gui
-    powertop
-  ];
-  
-  services = {    
-    # thermald.enable = true;
-    # cpupower-gui.enable = true;
+  environment.systemPackages =
+    (with pkgs; [
+      acpi
+      brightnessctl
+      cpupower-gui
+      powertop
+    ])
+    ++ [
+      config.boot.kernelPackages.cpupower
+    ];
+
+  services = {
     tlp.enable = true;
- 
+
     upower = {
       enable = true;
       percentageLow = 20;
@@ -25,19 +27,6 @@
       criticalPowerAction = "PowerOff";
     };
 
-    # auto-cpufreq = {
-    #   enable = true;
-    #   settings = {
-    #     battery = {
-    #       governor = "performance";
-    #       turbo = "auto";
-    #     };
-    #     charger = {
-    #       governor = "performance";
-    #       turbo = "auto";
-    #     };
-    #   };
-    # };
   };
 
   hardware.probe-rs.enable = true;
@@ -51,15 +40,10 @@
     CPU_SCALING_GOVERNOR_ON_BAT = "powersave";
   };
 
-  
-
   boot = {
-    kernelModules = ["acpi_call"];
-    extraModulePackages = with config.boot.kernelPackages;
-      [
-        acpi_call
-        cpupower
-      ]
-      ++ [pkgs.cpupower-gui];
+    kernelModules = [ "acpi_call" ];
+    extraModulePackages = with config.boot.kernelPackages; [
+      acpi_call
+    ];
   };
 }
