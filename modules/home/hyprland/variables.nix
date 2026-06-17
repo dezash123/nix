@@ -1,4 +1,4 @@
-_: {
+{
   home.sessionVariables = {
     BROWSER = "firefox";
     NIXOS_OZONE_WL = "1";

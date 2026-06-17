@@ -1,4 +1,3 @@
-_:
 let
   custom = {
     font = "JetBrainsMono Nerd Font";

@@ -1,4 +1,4 @@
-_: {
+{
   programs.nixvim.plugins = {
     bufferline.enable = true;
     remote-nvim.enable = true;
